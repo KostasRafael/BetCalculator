@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/components/navigation/navigation.css">
+    <link rel="stylesheet" href="./assets/components/fixtures-row/fixtures-row.css">
+    <link rel="stylesheet" href="./assets/components/close-button/close-button.css">
+    <link rel="stylesheet" href="./assets/components/single-team-container/single-team-container.css">
+    <link rel="stylesheet" href="./laliga.css">
+</head>
+
+<body>
+    <navigation-custom></navigation-custom>
+
+    <div class="keyboard-screen">
+        <div class="screen">
+            <div class="data-div data-div-one"> </div>
+            <div class="data-div data-div-two"></div>
+        </div>
+
+        <div class="all-teams-container">
+            <div class="row">
+                <single-team-container class="team-div real-madrid" team-name="Real Madrid"
+                    team-logo="olympiakos.png"></single-team-container>
+                <single-team-container class="team-div barcelona" team-name="Barcelona"
+                    team-logo="aek.png"></single-team-container>
+                <single-team-container class="team-div villareal" team-name="Villarreal"
+                    team-logo="aris.png"></single-team-container>
+                <single-team-container class="team-div atletico-madrid" team-name="Atletico Madrid"
+                    team-logo="panseraikos.png"></single-team-container>
+                <single-team-container class="team-div real-betis" team-name="Real Betis"
+                    team-logo="panseraikos.png"></single-team-container>
+            </div>
+            <div class="row">
+                <single-team-container class="team-div espanyol" team-name="Espanyol"
+                    team-logo="asteras-tripolis.png"></single-team-container>
+                <single-team-container class="team-div elche" team-name="Elche"
+                    team-logo="kifisia.jpg"></single-team-container>
+                <single-team-container class="team-div athletic-club" team-name="Athletic Club"
+                    team-logo="panetolikos.jpg"></single-team-container>
+                <single-team-container class="team-div sevilla" team-name="Sevilla"
+                    team-logo="ofi.png"></single-team-container>
+                <single-team-container class="team-div alaves" team-name="Alaves"
+                    team-logo="ael.png"></single-team-container>
+            </div>
+            <div class="row">
+                <single-team-container class="team-div Rayo-vallecano" team-name="Rayo Vallecano"
+                    team-logo="atromitos.jpg"></single-team-container>
+                <single-team-container class="team-div getafe" team-name="Getafe"
+                    team-logo="levadiakos.png"></single-team-container>
+                <single-team-container class="team-div osasuna" team-name="Osasuna"
+                    team-logo="paok.jpg"></single-team-container>
+                <single-team-container class="team-div valencia" team-name="Valencia"
+                    team-logo="panathinaikos.png"></single-team-container>
+                <single-team-container class="team-div levante" team-name="Levante"
+                    team-logo="panathinaikos.png"></single-team-container>
+            </div>
+            <div class="row">
+                <single-team-container class="team-div mallorca" team-name="Mallorca"
+                    team-logo="panathinaikos.png"></single-team-container>
+                <single-team-container class="team-div celta-vigo" team-name="Celtavigo"
+                    team-logo="panathinaikos.png"></single-team-container>
+                <single-team-container class="team-div real-sociedad" team-name="Realsociedad"
+                    team-logo="panathinaikos.png"></single-team-container>
+                <single-team-container class="team-div oviedo" team-name="Oviedo"
+                    team-logo="panathinaikos.png"></single-team-container>
+                <single-team-container class="team-div girona" team-name="Girona"
+                    team-logo="panathinaikos.png"></single-team-container>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://kit.fontawesome.com/50ab0d686f.js" crossorigin="anonymous"></script>
+    <script src="./assets/components/navigation/navigation.js"></script>
+    <script src="./assets/components/close-button/close-button.js"></script>
+    <script src="./assets/components/fixtures-row/fixtures-row.js"></script>
+    <script src="./assets/components/single-team-container/single-team-container.js" type="module" defer></script>
+    <script src="./laliga-functions.js"></script>
+</body>
+<script>
+
+    const arsenalDiv = document.querySelector(".real-madrid");
+    const manCityDiv = document.querySelector(".barcelona");
+    const liverpoolDiv = document.querySelector(".villarreal");
+    const bornemouthDiv = document.querySelector(".atletico-madrid");
+    const chelseaDiv = document.querySelector(".real-betis");
+    const tottenhamDiv = document.querySelector(".espanyol");
+    const sunderlandDiv = document.querySelector(".elche");
+    const crystalPalaceDiv = document.querySelector(".atletic-club");
+    const manUnitedDiv = document.querySelector(".sevilla");
+    const brightonDiv = document.querySelector(".allaves");
+    const astonVillaDiv = document.querySelector(".rayo-vallecano");
+    const evertonDiv = document.querySelector(".getafe");
+    const brentfordDiv = document.querySelector(".osasuna");
+    const newCastleDiv = document.querySelector(".valencia");
+    const fulhamDiv = document.querySelector(".levante");
+    const leedsUnitedDiv = document.querySelector(".mallorca");
+    const BurnleyDiv = document.querySelector(".celta-vigo");
+    const nottmForestDiv = document.querySelector(".real-sociedad");
+    const westHamDiv = document.querySelector(".oviedo");
+    const wolvesDiv = document.querySelector(".girona");
+
+
+    let realmadridFixtures;
+    let barcelonaFixtures;
+    let villarrealFixtures;
+    let atleticomadridFixtures;
+    let realbetisFixtures;
+    let espanyolFixtures;
+    let elcheFixtures;
+    let athleticclubFixtures;
+    let sevillaFixtures;
+    let alavesFixtures;
+    let rayovallecanoFixtures;
+    let getafeFixtures;
+    let osasunaFixtures;
+    let valenciaFixtures;
+    let levanteFixtures;
+    let mallorcaFixtures;
+    let celtavigoFixtures;
+    let realsociedadFixtures;
+    let oviedoFixtures;
+    let gironaFixtures;
+
+    const allTeams = [
+        { id: 529, name: "barcelona" },
+        { id: 530, name: "atleticomadrid" },
+        { id: 531, name: "atleticclub" },
+        { id: 532, name: "valencia" },
+        { id: 533, name: "villarreal" },
+        { id: 536, name: "sevilla" },
+        { id: 538, name: "celtavigo" },
+        { id: 539, name: "levante" },
+        { id: 540, name: "espanyol" },
+        { id: 541, name: "realmadrid" },
+        { id: 542, name: "alaves" },
+        { id: 543, name: "realbetis" },
+        { id: 546, name: "getafe" },
+        { id: 547, name: "girona" },
+        { id: 548, name: "realsociedad" },
+        { id: 718, name: "oviedo" },
+        { id: 727, name: "osasuna" },
+        { id: 728, name: "rayovallecano" },
+        { id: 797, name: "elche" },
+        { id: 798, name: "mallorca" }
+    ]
+
+    fetchAndSaveAllTeamsFixtures();
+
+    const screen = document.querySelector(".screen");
+    const dataDivOne = document.querySelector(".data-div-one");
+    const dataDivTwo = document.querySelector(".data-div-two");
+
+
+    // The clickedTeamFixturesArray is passed where the function is called in the
+    async function displayTeamFixtures(teamFixtures) {
+
+
+        // Huge: allFixturesDiv is created only once you have clicked the button
+        let allFixturesDiv = document.createElement("div");
+        allFixturesDiv.classList.add("all-fixtures-div");
+        let closeButton = document.createElement("close-button");
+        allFixturesDiv.appendChild(closeButton);
+
+
+        for (fixture of teamFixtures) {
+            let fixtureRow = document.createElement("fixtures-row");
+            fixtureRow.setAttribute("home-team-name", fixture.teams.home.name);
+            fixtureRow.setAttribute("away-team-name", fixture.teams.away.name);
+            fixtureRow.setAttribute("home-team-goals", fixture.goals.home);
+            fixtureRow.setAttribute("away-team-goals", fixture.goals.away);
+            allFixturesDiv.appendChild(fixtureRow);
+        }
+        // The allFixturesDiv has 7 fixtures-row, 7 divs.
+
+        // Here I care only about the content of DataDivOne
+        if (dataDivOne.querySelector(".all-fixtures-div")) {
+            if (dataDivTwo.querySelector(".all-fixtures-div")) {
+                clearDataDivTwo();
+                dataDivTwo.appendChild(allFixturesDiv);
+                closeButton.setAttribute("onclick", "clearDataDivTwo()");
+                dataDivTwo.classList.add("show");
+            } else {
+                dataDivTwo.appendChild(allFixturesDiv);
+                closeButton.setAttribute("onclick", "clearDataDivTwo()");
+                dataDivTwo.classList.add("show");
+            }
+        } else {
+            dataDivOne.appendChild(allFixturesDiv);
+            closeButton.setAttribute("onclick", "clearDataDivOne()");
+            dataDivOne.classList.add("show");
+        }
+
+
+    }
+
+
+    // Function that will be executed upon the execution of an event
+    // It will be able to receive an event object as argument
+    function clearDataDivOne() {
+        dataDivOne.classList.remove("show");
+        dataDivOne.querySelector(".all-fixtures-div").remove();
+    }
+
+    function clearDataDivTwo() {
+        dataDivTwo.classList.remove("show");
+        dataDivTwo.querySelector(".all-fixtures-div").remove();
+    }
+</script>
+
+</html>

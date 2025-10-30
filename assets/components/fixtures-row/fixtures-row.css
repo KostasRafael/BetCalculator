@@ -1,0 +1,44 @@
+/* fixtures-roe*/
+.data-div {
+  height: max-content;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: rgb(128, 128, 128, 0.2);
+
+  transform: translateY(50%);
+  opacity: 0;
+  transition: opacity, transform, ease-in-out, 2s;
+  border: 2px solid yellow;
+}
+
+.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+/* fixtures-roe*/
+.row {
+  box-sizing: border-box;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  border: 2px solid red;
+}
+/* fixtures-roe*/
+.name-goals-col {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  flex: 1;
+}
+/* fixtures-roe*/
+.data-div h4 {
+  margin: 0;
+  background: linear-gradient(to right, rgb(255, 255, 255), rgb(41, 168, 172));
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}

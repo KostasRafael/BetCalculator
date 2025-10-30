@@ -1,0 +1,32 @@
+.navigation-bar-container {
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.logo-image {
+  width: 120px;
+  border-radius: 15px;
+}
+
+.navigation-bar {
+}
+
+.nav-menu {
+  display: flex;
+  list-style-type: none;
+  gap: 40px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: rgb(129, 127, 127);
+  font-size: var(--font-size-large);
+  font-weight: 600;
+  transition: color 0.4s ease-in;
+}
+
+.nav-menu a:hover {
+  color: white;
+}

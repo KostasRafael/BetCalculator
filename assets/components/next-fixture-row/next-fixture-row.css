@@ -1,0 +1,224 @@
+:root {
+  /* Background colors*/
+  --custom-background-color: radial-gradient(
+      circle at bottom,
+      rgba(0, 182, 185, 0.4),
+      transparent
+    ),
+    #0a1324;
+  --card-background-color: rgba(255, 255, 255, 0.08);
+  --card-background-color-hover: rgba(255, 255, 255, 0.122);
+
+  /* Font-families */
+  --font-family-primary: "Raleway", sans-serif;
+
+  /* Font colors */
+  --font-color-primary: #fff;
+  --font-color-secondary: #29a8ac;
+
+  /* Font sizes */
+  --font-size-small: 12px;
+  --font-size-default: 16px;
+  --font-size-large: 18px;
+}
+
+/*next-fixture-container*/
+
+.next-fixtures-container {
+  box-sizing: border-box;
+  border: 2px solid red;
+  color: white;
+  background-color: rgb(128, 128, 128, 0.4);
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  padding: 5px;
+}
+
+.next-fixture-row-h1 {
+  margin: 0;
+  border: 2px solid blue;
+}
+
+.next-fixture-row-h4 {
+  margin: 0;
+}
+
+.next-fixture-row-h5 {
+  margin: 0;
+}
+
+.next-fixture-row-h6 {
+  margin: 0;
+}
+
+.next-fixture-row-span {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.next-fixture-row {
+  border: 2px solid blue;
+  background-color: rgb(128, 128, 128, 0.8);
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.col-one {
+  border: 2px solid green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.col-two {
+  display: flex;
+  border: 2px solid green;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.col-three {
+  border: 2px solid green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.home-probability {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+}
+
+.draw-probability {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+}
+
+.away-probability {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+}
+
+.home-given-odds {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+}
+
+.draw-given-odds {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+}
+
+.away-given-odds {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+}
+
+.home-required-odds {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+  width: min-content;
+}
+
+.home-required-odds h5 {
+  text-align: center;
+}
+
+.draw-required-odds {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+  width: min-content;
+}
+
+.draw-required-odds h5 {
+  text-align: center;
+}
+
+.away-required-odds {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+  width: min-content;
+}
+
+.away-required-odds h5 {
+  text-align: center;
+}
+
+.odss-given-home-number {
+  width: 40px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.odss-given-draw-number {
+  width: 40px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.odss-given-away-number {
+  width: 40px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.odss-required-home-number,
+.odss-required-draw-number,
+.odss-required-away-number {
+  width: 40px;
+  padding: 1px 2px;
+  border: 1.6px solid #767676;
+  text-align: center;
+  background-color: white;
+  height: 13.6px;
+  box-sizing: content-box;
+  color: black;
+  font-size: 12px;
+}
+
+.home-name,
+.home-probability-label,
+.odds-given,
+.draw-name,
+.draw-probability-label,
+.draw-text,
+.away-name,
+.away-probability-label,
+.odss-required {
+  color: var(--font-color-secondary);
+  background: rgb(95, 95, 95);
+  padding: 2px;
+}
+
+.home-name,
+.draw-name,
+.away-name {
+  background: var(--custom-background-color);
+  padding: 5px;
+  border-radius: 5px;
+}

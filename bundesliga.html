@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/components/navigation/navigation.css">
+    <link rel="stylesheet" href="./assets/components/single-team-container/single-team-container.css">
+    <link rel="stylesheet" href="./assets/components/fixtures-row/fixtures-row.css">
+    <link rel="stylesheet" href="./assets/components/close-button/close-button.css">
+    <link rel="stylesheet" href="./bundesliga.css" type="text/css">
+</head>
+
+<body>
+    <navigation-custom></navigation-custom>
+
+    <div class="keyboard-screen">
+        <div class="screen">
+            <div class="data-div data-div-one"> </div>
+            <div class="data-div data-div-two"></div>
+        </div>
+
+        <div class="all-teams-container">
+            <div class="row">
+                <single-team-container class="team-div bayern" team-name="Bayern"
+                    team-logo="olympiakos.png"></single-team-container>
+                <single-team-container class="team-div man-city" team-name="RB Leipzig"
+                    team-logo="aek.png"></single-team-container>
+                <single-team-container class="team-div liverpool" team-name="VfB Stuttgart"
+                    team-logo="aris.png"></single-team-container>
+                <single-team-container class="team-div bournemouth" team-name="Dortmund"
+                    team-logo="panseraikos.png"></single-team-container>
+                <single-team-container class="team-div chelsea" team-name="Leverkusen"
+                    team-logo="panseraikos.png"></single-team-container>
+            </div>
+            <div class="row">
+                <single-team-container class="team-div tottenham" team-name="Koln"
+                    team-logo="asteras-tripolis.png"></single-team-container>
+                <single-team-container class="team-div sunderland" team-name="Eintracht Frankfurt"
+                    team-logo="kifisia.jpg"></single-team-container>
+                <single-team-container class="team-div crystal-palace" team-name="Hoffenheim"
+                    team-logo="panetolikos.jpg"></single-team-container>
+                <single-team-container class="team-div man-united" team-name="Union Berlin"
+                    team-logo="ofi.png"></single-team-container>
+                <single-team-container class="team-div brighton" team-name="SC Freiburg"
+                    team-logo="ael.png"></single-team-container>
+            </div>
+            <div class="row">
+                <single-team-container class="team-div aston-villa" team-name="Hamburger SV"
+                    team-logo="atromitos.jpg"></single-team-container>
+                <single-team-container class="team-div everton" team-name="Werder Bremen"
+                    team-logo="levadiakos.png"></single-team-container>
+                <single-team-container class="team-div brentford" team-name="Augsburg"
+                    team-logo="paok.jpg"></single-team-container>
+                <single-team-container class="team-div newcastle" team-name="St Pauli"
+                    team-logo="panathinaikos.png"></single-team-container>
+                <single-team-container class="team-div fulham" team-name="VfL Wolfsburg"
+                    team-logo="panathinaikos.png"></single-team-container>
+            </div>
+            <div class="row">
+                <single-team-container class="team-div leeds-united" team-name="Mainz"
+                    team-logo="panathinaikos.png"></single-team-container>
+                <single-team-container class="team-div burnley" team-name="Heidenheim"
+                    team-logo="panathinaikos.png"></single-team-container>
+                <single-team-container class="team-div nottm-forest" team-name="Borussia Mönchengladbach"
+                    team-logo="panathinaikos.png"></single-team-container>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://kit.fontawesome.com/50ab0d686f.js" crossorigin="anonymous"></script>
+    <script src="./assets/components/navigation/navigation.js"></script>
+    <script src="./assets/components/single-team-container/single-team-container.js" type="module" defer></script>
+    <script src="./assets/components/close-button/close-button.js"></script>
+    <script src="./assets/components/fixtures-row/fixtures-row.js"></script>
+    <script src="./bundesliga-functions.js"></script>
+</body>
+<script>
+    const allTeams = [
+        { id: 157, name: "bayernmunchen" },
+        { id: 160, name: "freiburg" },
+        { id: 161, name: "Wolfsburg" },
+        { id: 162, name: "werderbremen" },
+        { id: 163, name: "borussiamönchengladbach" },
+        { id: 164, name: "mainz" },
+        { id: 165, name: "borussiadortmund" },
+        { id: 167, name: "hoffenheim" },
+        { id: 168, name: "bayerleverkusen" },
+        { id: 169, name: "eintrachtfrankfurt" },
+        { id: 170, name: "augsburg" },
+        { id: 172, name: "stuttgart" },
+        { id: 173, name: "leipzig" },
+        { id: 175, name: "hamburgersv" },
+        { id: 180, name: "heidenheim" },
+        { id: 182, name: "unionberlin" },
+        { id: 186, name: "stpauli" },
+        { id: 192, name: "köln" },
+    ]
+
+    let bayernFixtures;
+    let rbleipzigFixtures;
+    let vfbstuttgartFixtures;
+    let dortmundFixtures;
+    let leverkusenFixtures;
+    let kolnFixtures;
+    let eintrachtfrankfurtFixtures;
+    let hoffenheimFixtures;
+    let unionberlinFixtures;
+    let scfreiburgFixtures;
+    let hamburgersvFixtures;
+    let werderbremenFixtures;
+    let augsburgFixtures;
+    let stpauliFixtures;
+    let vflwolfsburgFixtures;
+    let mainzFixtures;
+    let heidenheimFixtures;
+    let borussiamönchengladbachFixtures;
+
+    fetchAndSaveAllTeamsFixtures();
+
+    const screen = document.querySelector(".screen");
+    const dataDivOne = document.querySelector(".data-div-one");
+    const dataDivTwo = document.querySelector(".data-div-two");
+
+
+    // The clickedTeamFixturesArray is passed where the function is called in the
+    async function displayTeamFixtures(teamFixtures) {
+        await fetchAndSaveAllTeamsFixtures();
+
+        // Huge: allFixturesDiv is created only once you have clicked the button
+        let allFixturesDiv = document.createElement("div");
+        allFixturesDiv.classList.add("all-fixtures-div");
+        let closeButton = document.createElement("close-button");
+        allFixturesDiv.appendChild(closeButton);
+
+
+        for (fixture of teamFixtures) {
+            let fixtureRow = document.createElement("fixtures-row");
+            fixtureRow.setAttribute("home-team-name", fixture.teams.home.name);
+            fixtureRow.setAttribute("away-team-name", fixture.teams.away.name);
+            fixtureRow.setAttribute("home-team-goals", fixture.goals.home);
+            fixtureRow.setAttribute("away-team-goals", fixture.goals.away);
+            allFixturesDiv.appendChild(fixtureRow);
+        }
+        // The allFixturesDiv has 7 fixtures-row, 7 divs.
+
+        // Here I care only about the content of DataDivOne
+        if (dataDivOne.querySelector(".all-fixtures-div")) {
+            if (dataDivTwo.querySelector(".all-fixtures-div")) {
+                clearDataDivTwo();
+                dataDivTwo.appendChild(allFixturesDiv);
+                closeButton.setAttribute("onclick", "clearDataDivTwo()");
+                dataDivTwo.classList.add("show");
+            } else {
+                dataDivTwo.appendChild(allFixturesDiv);
+                closeButton.setAttribute("onclick", "clearDataDivTwo()");
+                dataDivTwo.classList.add("show");
+            }
+        } else {
+            dataDivOne.appendChild(allFixturesDiv);
+            closeButton.setAttribute("onclick", "clearDataDivOne()");
+            dataDivOne.classList.add("show");
+        }
+
+
+    }
+
+
+    // Function that will be executed upon the execution of an event
+    // It will be able to receive an event object as argument
+    function clearDataDivOne() {
+        dataDivOne.classList.remove("show");
+        dataDivOne.querySelector(".all-fixtures-div").remove();
+    }
+
+    function clearDataDivTwo() {
+        dataDivTwo.classList.remove("show");
+        dataDivTwo.querySelector(".all-fixtures-div").remove();
+    }
+
+
+</script>
+
+</html>
