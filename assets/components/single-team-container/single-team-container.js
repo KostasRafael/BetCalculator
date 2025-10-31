@@ -7,13 +7,14 @@ class singleTeamContainer extends HTMLElement {
     const teamName = this.getAttribute("team-name");
     const teamLogo = this.getAttribute("team-logo");
 
-    //
     this.innerHTML = `
           <button class="team-logo-name-div" onclick="displayTeamFixtures(${teamName
             .replace(/\s+/g, "")
             .toLowerCase()}Fixtures)">
             <div class="logo-name">  
-                <h4 class="team-name"> <img src="./assets/images/${teamLogo}" alt="" class="team-logo">  ${teamName}</h4>
+                <h4 class="team-name"> <img src="./assets/images/${teamLogo}" alt="" class="team-logo">  ${
+      teamName.split(" ")[0]
+    }</h4>
             </div>
             </button>
         `;

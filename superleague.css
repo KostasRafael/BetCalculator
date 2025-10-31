@@ -37,7 +37,17 @@ body {
 }
 
 .all-fixtures-div {
-  border: 2px solid red;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.results-heading {
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 .hide-button {

@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="./assets/components/fixtures-row/fixtures-row.css">
     <link rel="stylesheet" href="./assets/components/close-button/close-button.css">
     <link rel="stylesheet" href="./assets/components/navigation/navigation.css">
-    <!--<script src="./functions.js"></script>-->
+    <script src="./functions.js"></script>
     <script src="./superleague-teams.js"></script>
     <script src="./team-fixture-card.js"></script>
     <script src="https://kit.fontawesome.com/50ab0d686f.js" crossorigin="anonymous"></script>
@@ -34,40 +34,34 @@
             </div>
 
             <div class="all-teams-container">
-                <div class="row">
-                    <single-team-container class="team-div olympiakos" team-name="Olympiakos"
-                        team-logo="olympiakos.png"></single-team-container>
-                    <single-team-container class="team-div aek" team-name="Aek"
-                        team-logo="aek.png"></single-team-container>
-                    <single-team-container class="team-div aris" team-name="Aris"
-                        team-logo="aris.png"></single-team-container>
-                    <single-team-container class="team-div volos" team-name="Volos"
-                        team-logo="panseraikos.png"></single-team-container>
-                    <single-team-container class="team-div panseraikos" team-name="Panseraikos"
-                        team-logo="panseraikos.png"></single-team-container>
-                </div>
-                <div class="row">
-                    <single-team-container class="team-div asteras" team-name="Asteras Tripolis"
-                        team-logo="asteras-tripolis.png"></single-team-container>
-                    <single-team-container class="team-div kifisia" team-name="Kifisia"
-                        team-logo="kifisia.jpg"></single-team-container>
-                    <single-team-container class="team-div panetolikos" team-name="Panetolikos"
-                        team-logo="panetolikos.jpg"></single-team-container>
-                    <single-team-container class="team-div ofi" team-name="Ofi"
-                        team-logo="ofi.png"></single-team-container>
-                    <single-team-container class="team-div larissa" team-name="Larissa"
-                        team-logo="ael.png"></single-team-container>
-                </div>
-                <div class="row">
-                    <single-team-container class="team-div atromitos" team-name="Atromitos"
-                        team-logo="atromitos.jpg"></single-team-container>
-                    <single-team-container class="team-div levadiakos" team-name="Levadiakos"
-                        team-logo="levadiakos.png"></single-team-container>
-                    <single-team-container class="team-div paok" team-name="Paok"
-                        team-logo="paok.jpg"></single-team-container>
-                    <single-team-container class="team-div panathinaikos " team-name="Panathinaikos"
-                        team-logo="panathinaikos.png"></single-team-container>
-                </div>
+
+                <single-team-container class="team-div olympiakos" team-name="Olympiakos"
+                    team-logo="olympiakos.png"></single-team-container>
+                <single-team-container class="team-div aek" team-name="Aek" team-logo="aek.png"></single-team-container>
+                <single-team-container class="team-div aris" team-name="Aris"
+                    team-logo="aris.png"></single-team-container>
+                <single-team-container class="team-div volos" team-name="Volos"
+                    team-logo="panseraikos.png"></single-team-container>
+                <single-team-container class="team-div panseraikos" team-name="Panseraikos"
+                    team-logo="panseraikos.png"></single-team-container>
+                <single-team-container class="team-div asteras" team-name="Asteras Tripolis"
+                    team-logo="asteras-tripolis.png"></single-team-container>
+                <single-team-container class="team-div kifisia" team-name="Kifisia"
+                    team-logo="kifisia.jpg"></single-team-container>
+                <single-team-container class="team-div panetolikos" team-name="Panetolikos"
+                    team-logo="panetolikos.jpg"></single-team-container>
+                <single-team-container class="team-div ofi" team-name="Ofi" team-logo="ofi.png"></single-team-container>
+                <single-team-container class="team-div larissa" team-name="Larissa"
+                    team-logo="ael.png"></single-team-container>
+                <single-team-container class="team-div atromitos" team-name="Atromitos"
+                    team-logo="atromitos.jpg"></single-team-container>
+                <single-team-container class="team-div levadiakos" team-name="Levadiakos"
+                    team-logo="levadiakos.png"></single-team-container>
+                <single-team-container class="team-div paok" team-name="Paok"
+                    team-logo="paok.jpg"></single-team-container>
+                <single-team-container class="team-div panathinaikos " team-name="Panathinaikos"
+                    team-logo="panathinaikos.png"></single-team-container>
+
             </div>
         </div>
 
@@ -150,8 +144,15 @@
         // Huge: allFixturesDiv is created only once you have clicked the button
         let allFixturesDiv = document.createElement("div");
         allFixturesDiv.classList.add("all-fixtures-div");
+
         let closeButton = document.createElement("close-button");
         allFixturesDiv.appendChild(closeButton);
+
+        let resultsHeading = document.createElement("h2");
+        resultsHeading.classList.add("results-heading");
+        resultsHeading.textContent = `Results`;
+        allFixturesDiv.appendChild(resultsHeading);
+
 
 
         for (fixture of teamFixtures) {

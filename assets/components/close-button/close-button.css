@@ -1,11 +1,9 @@
 .close-button-container {
-  border: 2px solid green;
   display: flex;
   justify-content: flex-end;
 }
 
 .close-button {
-  border: 2px solid purple;
   display: inline-block;
   background-color: rgb(236, 104, 104);
   display: flex;

@@ -11,13 +11,13 @@ class fixturesRow extends HTMLElement {
 
     this.innerHTML = `
      <div class="row names-goals-row">
-            <div class="name-goals-col">
-                <h4>${homeTeamName}</h4>
+            <div class="home-name-goals-col">
+                <h4>${homeTeamName.split(" ")[0]}</h4>
                 <h4>${homeTeamGoals}</h4>
             </div>
-            <div class="name-goals-col">
-                <h4>${awayTeamName}</h4>
-                <h4>${awayTeamGoals}</h4>
+            <div class="away-name-goals-col">
+              <h4 class="away-goals">${awayTeamGoals}</h4>
+              <h4 class="away-name">${awayTeamName.split(" ")[0]}</h4>
             </div>
         </div>
     `;

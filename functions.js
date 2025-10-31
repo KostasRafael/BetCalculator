@@ -56,3 +56,14 @@ async function fetchAllTeamsSequentially() {
 async function fetchAndSaveAllTeamsFixtures() {
   await fetchAllTeamsSequentially();
 }
+
+function fetchAllTeamsOfLeague() {
+  fetch("https://v3.football.api-sports.io/teams?league=78&season=2025", {
+    headers,
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const allteams = data.response;
+      console.log("allTeams", allteams);
+    });
+}
