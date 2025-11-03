@@ -29,8 +29,6 @@ html {
 body {
 }
 
-/* Navigation */
-
 .screen {
   display: flex;
   gap: 10px;

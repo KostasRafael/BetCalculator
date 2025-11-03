@@ -9,70 +9,78 @@
     <link rel="stylesheet" href="./assets/components/fixtures-row/fixtures-row.css">
     <link rel="stylesheet" href="./assets/components/close-button/close-button.css">
     <link rel="stylesheet" href="./assets/components/single-team-container/single-team-container.css">
+    <link rel="stylesheet" href="./assets/components/next-fixture-row/next-fixture-row.css">
     <link rel="stylesheet" href="./laliga.css">
 </head>
 
 <body>
     <navigation-custom></navigation-custom>
 
-    <div class="keyboard-screen">
-        <div class="screen">
-            <div class="data-div data-div-one"> </div>
-            <div class="data-div data-div-two"></div>
+    <section class="laptop-next-fixtures">
+        <div class="keyboard-screen">
+            <div class="screen">
+                <div class="data-div data-div-one"> </div>
+                <div class="data-div data-div-two"></div>
+            </div>
+
+            <div class="all-teams-container">
+                <single-team-container class="team-div real-madrid" team-name="Real Madrid"
+                    team-logo="olympiakos.png"></single-team-container>
+                <single-team-container class="team-div barcelona" team-name="Barcelona"
+                    team-logo="aek.png"></single-team-container>
+                <single-team-container class="team-div villareal" team-name="Villarreal"
+                    team-logo="aris.png"></single-team-container>
+                <single-team-container class="team-div atletico-madrid" team-name="Atletico Madrid"
+                    team-logo="panseraikos.png"></single-team-container>
+                <single-team-container class="team-div real-betis" team-name="Real Betis"
+                    team-logo="panseraikos.png"></single-team-container>
+                <single-team-container class="team-div espanyol" team-name="Espanyol"
+                    team-logo="asteras-tripolis.png"></single-team-container>
+                <single-team-container class="team-div elche" team-name="Elche"
+                    team-logo="kifisia.jpg"></single-team-container>
+                <single-team-container class="team-div athletic-club" team-name="Athletic Club"
+                    team-logo="panetolikos.jpg"></single-team-container>
+                <single-team-container class="team-div sevilla" team-name="Sevilla"
+                    team-logo="ofi.png"></single-team-container>
+                <single-team-container class="team-div alaves" team-name="Alaves"
+                    team-logo="ael.png"></single-team-container>
+                <single-team-container class="team-div Rayo-vallecano" team-name="Rayo Vallecano"
+                    team-logo="atromitos.jpg"></single-team-container>
+                <single-team-container class="team-div getafe" team-name="Getafe"
+                    team-logo="levadiakos.png"></single-team-container>
+                <single-team-container class="team-div osasuna" team-name="Osasuna"
+                    team-logo="paok.jpg"></single-team-container>
+                <single-team-container class="team-div valencia" team-name="Valencia"
+                    team-logo="panathinaikos.png"></single-team-container>
+                <single-team-container class="team-div levante" team-name="Levante"
+                    team-logo="panathinaikos.png"></single-team-container>
+                <single-team-container class="team-div mallorca" team-name="Mallorca"
+                    team-logo="panathinaikos.png"></single-team-container>
+                <single-team-container class="team-div celta-vigo" team-name="Celtavigo"
+                    team-logo="panathinaikos.png"></single-team-container>
+                <single-team-container class="team-div real-sociedad" team-name="Realsociedad"
+                    team-logo="panathinaikos.png"></single-team-container>
+                <single-team-container class="team-div oviedo" team-name="Oviedo"
+                    team-logo="panathinaikos.png"></single-team-container>
+                <single-team-container class="team-div girona" team-name="Girona"
+                    team-logo="panathinaikos.png"></single-team-container>
+            </div>
         </div>
 
-        <div class="all-teams-container">
-            <single-team-container class="team-div real-madrid" team-name="Real Madrid"
-                team-logo="olympiakos.png"></single-team-container>
-            <single-team-container class="team-div barcelona" team-name="Barcelona"
-                team-logo="aek.png"></single-team-container>
-            <single-team-container class="team-div villareal" team-name="Villarreal"
-                team-logo="aris.png"></single-team-container>
-            <single-team-container class="team-div atletico-madrid" team-name="Atletico Madrid"
-                team-logo="panseraikos.png"></single-team-container>
-            <single-team-container class="team-div real-betis" team-name="Real Betis"
-                team-logo="panseraikos.png"></single-team-container>
-            <single-team-container class="team-div espanyol" team-name="Espanyol"
-                team-logo="asteras-tripolis.png"></single-team-container>
-            <single-team-container class="team-div elche" team-name="Elche"
-                team-logo="kifisia.jpg"></single-team-container>
-            <single-team-container class="team-div athletic-club" team-name="Athletic Club"
-                team-logo="panetolikos.jpg"></single-team-container>
-            <single-team-container class="team-div sevilla" team-name="Sevilla"
-                team-logo="ofi.png"></single-team-container>
-            <single-team-container class="team-div alaves" team-name="Alaves"
-                team-logo="ael.png"></single-team-container>
-            <single-team-container class="team-div Rayo-vallecano" team-name="Rayo Vallecano"
-                team-logo="atromitos.jpg"></single-team-container>
-            <single-team-container class="team-div getafe" team-name="Getafe"
-                team-logo="levadiakos.png"></single-team-container>
-            <single-team-container class="team-div osasuna" team-name="Osasuna"
-                team-logo="paok.jpg"></single-team-container>
-            <single-team-container class="team-div valencia" team-name="Valencia"
-                team-logo="panathinaikos.png"></single-team-container>
-            <single-team-container class="team-div levante" team-name="Levante"
-                team-logo="panathinaikos.png"></single-team-container>
-            <single-team-container class="team-div mallorca" team-name="Mallorca"
-                team-logo="panathinaikos.png"></single-team-container>
-            <single-team-container class="team-div celta-vigo" team-name="Celtavigo"
-                team-logo="panathinaikos.png"></single-team-container>
-            <single-team-container class="team-div real-sociedad" team-name="Realsociedad"
-                team-logo="panathinaikos.png"></single-team-container>
-            <single-team-container class="team-div oviedo" team-name="Oviedo"
-                team-logo="panathinaikos.png"></single-team-container>
-            <single-team-container class="team-div girona" team-name="Girona"
-                team-logo="panathinaikos.png"></single-team-container>
+        <div class="next-fixtures-container">
+            <h4 class="next-fixture-row-h4">Upcoming Fixtures</h4>
         </div>
-    </div>
+    </section>
 
 
 
-
+    <script src="./laliga-next-seven-games-odds.js"></script>
     <script src="https://kit.fontawesome.com/50ab0d686f.js" crossorigin="anonymous"></script>
     <script src="./assets/components/navigation/navigation.js"></script>
     <script src="./assets/components/close-button/close-button.js"></script>
     <script src="./assets/components/fixtures-row/fixtures-row.js"></script>
     <script src="./assets/components/single-team-container/single-team-container.js" type="module" defer></script>
+    <script src="./assets/components/next-fixture-row/next-fixture-row.js"></script>
     <script src="./laliga-functions.js"></script>
 </body>
 <script>
@@ -159,6 +167,11 @@
         allFixturesDiv.classList.add("all-fixtures-div");
         let closeButton = document.createElement("close-button");
         allFixturesDiv.appendChild(closeButton);
+
+        let resultsHeading = document.createElement("h2");
+        resultsHeading.classList.add("results-heading");
+        resultsHeading.textContent = `Results`;
+        allFixturesDiv.appendChild(resultsHeading);
 
 
         for (fixture of teamFixtures) {

@@ -9,62 +9,70 @@
     <link rel="stylesheet" href="./assets/components/fixtures-row/fixtures-row.css">
     <link rel="stylesheet" href="./assets/components/close-button/close-button.css">
     <link rel="stylesheet" href="./assets/components/navigation/navigation.css">
+    <link rel="stylesheet" href="./assets/components/next-fixture-row/next-fixture-row.css">
     <link rel="stylesheet" href="./premierleague.css" type="text/css">
 </head>
 
 <body>
     <navigation-custom></navigation-custom>
 
-    <div class="keyboard-screen">
-        <div class="screen">
-            <div class="data-div data-div-one"> </div>
-            <div class="data-div data-div-two"></div>
+    <section class="laptop-next-fixtures">
+        <div class="keyboard-screen">
+            <div class="screen">
+                <div class="data-div data-div-one"> </div>
+                <div class="data-div data-div-two"></div>
+            </div>
+
+            <div class="all-teams-container">
+                <single-team-container class="team-div arsenal" team-name="Arsenal"
+                    team-logo="olympiakos.png"></single-team-container>
+                <single-team-container class="team-div man-city" team-name="ManCity"
+                    team-logo="aek.png"></single-team-container>
+                <single-team-container class="team-div liverpool" team-name="Liverpool"
+                    team-logo="aris.png"></single-team-container>
+                <single-team-container class="team-div bournemouth" team-name="Bournemouth"
+                    team-logo="panseraikos.png"></single-team-container>
+                <single-team-container class="team-div chelsea" team-name="Chelsea"
+                    team-logo="panseraikos.png"></single-team-container>
+                <single-team-container class="team-div tottenham" team-name="Tottenham"
+                    team-logo="asteras-tripolis.png"></single-team-container>
+                <single-team-container class="team-div sunderland" team-name="Sunderland"
+                    team-logo="kifisia.jpg"></single-team-container>
+                <single-team-container class="team-div crystal-palace" team-name="CrystalPalace"
+                    team-logo="panetolikos.jpg"></single-team-container>
+                <single-team-container class="team-div man-united" team-name="ManUnited"
+                    team-logo="ofi.png"></single-team-container>
+                <single-team-container class="team-div brighton" team-name="Brighton"
+                    team-logo="ael.png"></single-team-container>
+                <single-team-container class="team-div aston-villa" team-name="AstonVilla"
+                    team-logo="atromitos.jpg"></single-team-container>
+                <single-team-container class="team-div everton" team-name="Everton"
+                    team-logo="levadiakos.png"></single-team-container>
+                <single-team-container class="team-div brentford" team-name="Brentford"
+                    team-logo="paok.jpg"></single-team-container>
+                <single-team-container class="team-div newcastle" team-name="Newcastle"
+                    team-logo="panathinaikos.png"></single-team-container>
+                <single-team-container class="team-div fulham" team-name="Fulham"
+                    team-logo="panathinaikos.png"></single-team-container>
+                <single-team-container class="team-div leeds-united" team-name="LeedsUnited"
+                    team-logo="panathinaikos.png"></single-team-container>
+                <single-team-container class="team-div burnley" team-name="Burnley"
+                    team-logo="panathinaikos.png"></single-team-container>
+                <single-team-container class="team-div nottm-forest" team-name="NottmForest"
+                    team-logo="panathinaikos.png"></single-team-container>
+                <single-team-container class="team-div west-ham" team-name="WestHam"
+                    team-logo="panathinaikos.png"></single-team-container>
+                <single-team-container class="team-div wolves" team-name="Wolves"
+                    team-logo="panathinaikos.png"></single-team-container>
+            </div>
         </div>
 
-        <div class="all-teams-container">
-            <single-team-container class="team-div arsenal" team-name="Arsenal"
-                team-logo="olympiakos.png"></single-team-container>
-            <single-team-container class="team-div man-city" team-name="ManCity"
-                team-logo="aek.png"></single-team-container>
-            <single-team-container class="team-div liverpool" team-name="Liverpool"
-                team-logo="aris.png"></single-team-container>
-            <single-team-container class="team-div bournemouth" team-name="Bournemouth"
-                team-logo="panseraikos.png"></single-team-container>
-            <single-team-container class="team-div chelsea" team-name="Chelsea"
-                team-logo="panseraikos.png"></single-team-container>
-            <single-team-container class="team-div tottenham" team-name="Tottenham"
-                team-logo="asteras-tripolis.png"></single-team-container>
-            <single-team-container class="team-div sunderland" team-name="Sunderland"
-                team-logo="kifisia.jpg"></single-team-container>
-            <single-team-container class="team-div crystal-palace" team-name="CrystalPalace"
-                team-logo="panetolikos.jpg"></single-team-container>
-            <single-team-container class="team-div man-united" team-name="ManUnited"
-                team-logo="ofi.png"></single-team-container>
-            <single-team-container class="team-div brighton" team-name="Brighton"
-                team-logo="ael.png"></single-team-container>
-            <single-team-container class="team-div aston-villa" team-name="AstonVilla"
-                team-logo="atromitos.jpg"></single-team-container>
-            <single-team-container class="team-div everton" team-name="Everton"
-                team-logo="levadiakos.png"></single-team-container>
-            <single-team-container class="team-div brentford" team-name="Brentford"
-                team-logo="paok.jpg"></single-team-container>
-            <single-team-container class="team-div newcastle" team-name="Newcastle"
-                team-logo="panathinaikos.png"></single-team-container>
-            <single-team-container class="team-div fulham" team-name="Fulham"
-                team-logo="panathinaikos.png"></single-team-container>
-            <single-team-container class="team-div leeds-united" team-name="LeedsUnited"
-                team-logo="panathinaikos.png"></single-team-container>
-            <single-team-container class="team-div burnley" team-name="Burnley"
-                team-logo="panathinaikos.png"></single-team-container>
-            <single-team-container class="team-div nottm-forest" team-name="NottmForest"
-                team-logo="panathinaikos.png"></single-team-container>
-            <single-team-container class="team-div west-ham" team-name="WestHam"
-                team-logo="panathinaikos.png"></single-team-container>
-            <single-team-container class="team-div wolves" team-name="Wolves"
-                team-logo="panathinaikos.png"></single-team-container>
+        <div class="next-fixtures-container">
+            <h4 class="next-fixture-row-h4">Upcoming Fixtures</h4>
         </div>
-    </div>
-
+    </section>
+    <script src="./premierleague-next-seven-games-odds.js"></script>
+    <script src="./assets/components/next-fixture-row/next-fixture-row.js"></script>
     <script src="https://kit.fontawesome.com/50ab0d686f.js" crossorigin="anonymous"></script>
     <script src="./premier-league-funcions.js"></script>
     <script src="./assets/components/navigation/navigation.js"></script>
@@ -155,6 +163,12 @@
         allFixturesDiv.classList.add("all-fixtures-div");
         let closeButton = document.createElement("close-button");
         allFixturesDiv.appendChild(closeButton);
+
+        let resultsHeading = document.createElement("h2");
+        resultsHeading.classList.add("results-heading");
+        resultsHeading.textContent = `Results`;
+        allFixturesDiv.appendChild(resultsHeading);
+
 
 
         for (fixture of teamFixtures) {

@@ -29,3 +29,32 @@ html {
 
 body {
 }
+
+.screen {
+  display: flex;
+  gap: 10px;
+}
+
+.all-fixtures-div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.results-heading {
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.hide-button {
+  display: none;
+}
+
+.laptop-next-fixtures {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
