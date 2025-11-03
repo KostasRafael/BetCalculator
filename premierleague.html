@@ -81,6 +81,143 @@
     <script src="./assets/components/single-team-container/single-team-container.js" type="module" defer></script>
 </body>
 <script>
+    const headers = {
+        "x-rapidapi-host": "v3.football.api-sports.io",
+        "x-rapidapi-key": "94d01bff67718f85de3f0532069fbbf1",
+    };
+
+
+    // To display logo image
+
+    let manchesterLogo;
+    let newcastleLogo;
+    let bournemouthLogo;
+    let fulhamLogo;
+    let wolvesLogo;
+    let liverpoolLogo;
+    let arsenalLogo;
+    let burnleyLogo;
+    let evertonLogo;
+    let tottenhamLogo;
+    let westhamLogo;
+    let chelseaLogo;
+    let manchesterCityLogo;
+    let brightonLogo;
+    let crystalpalaceLogo;
+    let brentfordLogo;
+    let leedsLogo;
+    let nottinghamForestLogo;
+    let astonVillaLogo;
+    let sunderlandLogo;
+
+
+    function fetchAllTeams() {
+        return fetch("https://v3.football.api-sports.io/teams?league=39&season=2025", { headers }).then(response => response.json())
+            .then((data) => {
+                const allteams = data.response;
+                console.log("allTeams", allteams);
+                return allteams;
+            });
+    }
+
+    async function extractAllTeams() {
+        const allTeamsArray = await fetchAllTeams();
+        allTeamsArray.map(team => {
+            console.log("all", allTeamsArray)
+            let teamName = team.team.name;
+            console.log("name", teamName);
+            let teamLogo = team.team.logo;
+            if (teamName === "Manchester United") {
+                manchesterLogo = teamLogo;
+            } else if (teamName === "Newcastle") {
+                newcastleLogo = teamLogo;
+            } else if (teamName === "Bournemouth") {
+                bournemouthLogo = teamLogo;
+            } else if (teamName === "Fulham") {
+                fulhamLogo = teamLogo;
+            } else if (teamName === "Wolves") {
+                wolvesLogo = teamLogo;
+            } else if (teamName === "Liverpool") {
+                liverpoolLogo = teamLogo;
+            } else if (teamName === "Arsenal") {
+                arsenalLogo = teamLogo;
+            } else if (teamName === "Burnley") {
+                burnleyLogo = teamLogo;
+            } else if (teamName === "Everton") {
+                evertonLogo = teamLogo;
+            } else if (teamName === "Tottenham") {
+                tottenhamLogo = teamLogo;
+            } else if (teamName === "West Ham") {
+                westhamLogo = teamLogo;
+            } else if (teamName === "Chelsea") {
+                chelseaLogo = teamLogo;
+            } else if (teamName === "Manchester City") {
+                manchesterCityLogo = teamLogo;
+            } else if (teamName === "Brighton") {
+                brightonLogo = teamLogo;
+            } else if (teamName === "Crystal Palace") {
+                crystalpalaceLogo = teamLogo;
+            } else if (teamName === "Brentford") {
+                brentfordLogo = teamLogo;
+            } else if (teamName === "Leeds") {
+                leedsLogo = teamLogo;
+            } else if (teamName === "Nottingham Forest") {
+                nottinghamForestLogo = teamLogo;
+            } else if (teamName === "Aston Villa") {
+                astonVillaLogo = teamLogo;
+            } else if (teamName === "Sunderland") {
+                sunderlandLogo = teamLogo;
+            }
+        })
+
+        const allTeamsContainer = document.querySelector(".all-teams-container");
+        allTeamsContainer.innerHTML = `
+    <single-team-container class="team-div arsenal" team-name="Arsenal"
+                    team-logo="${arsenalLogo}"></single-team-container>
+                <single-team-container class="team-div man-city" team-name="ManCity"
+                   team-logo="${manchesterCityLogo}"></single-team-container>
+                <single-team-container class="team-div liverpool" team-name="Liverpool"
+                    team-logo="${liverpoolLogo}"></single-team-container>
+                <single-team-container class="team-div bournemouth" team-name="Bournemouth"
+                    team-logo="${bournemouthLogo}"></single-team-container>
+                <single-team-container class="team-div chelsea" team-name="Chelsea"
+                   team-logo="${chelseaLogo}"></single-team-container>
+                <single-team-container class="team-div tottenham" team-name="Tottenham"
+                   team-logo="${tottenhamLogo}"></single-team-container>
+                <single-team-container class="team-div sunderland" team-name="Sunderland"
+                    team-logo="${sunderlandLogo}"></single-team-container>
+                <single-team-container class="team-div crystal-palace" team-name="CrystalPalace"
+                    team-logo="${crystalpalaceLogo}"></single-team-container>
+                <single-team-container class="team-div man-united" team-name="ManUnited"
+                  team-logo="${manchesterLogo}"></single-team-container>
+                <single-team-container class="team-div brighton" team-name="Brighton"
+                   team-logo="${brightonLogo}"></single-team-container>
+                <single-team-container class="team-div aston-villa" team-name="AstonVilla"
+                   team-logo="${astonVillaLogo}"></single-team-container>
+                <single-team-container class="team-div everton" team-name="Everton"
+                    team-logo="${evertonLogo}"></single-team-container>
+                <single-team-container class="team-div brentford" team-name="Brentford"
+                   team-logo="${brentfordLogo}"></single-team-container>
+                <single-team-container class="team-div newcastle" team-name="Newcastle"
+                    team-logo="${newcastleLogo}"></single-team-container>
+                <single-team-container class="team-div fulham" team-name="Fulham"
+                  team-logo="${fulhamLogo}"></single-team-container>
+                <single-team-container class="team-div leeds-united" team-name="LeedsUnited"
+                    team-logo="${leedsLogo}"></single-team-container>
+                <single-team-container class="team-div burnley" team-name="Burnley"
+                   team-logo="${burnleyLogo}"></single-team-container>
+                <single-team-container class="team-div nottm-forest" team-name="NottmForest"
+                  team-logo="${nottinghamForestLogo}"></single-team-container>
+                <single-team-container class="team-div west-ham" team-name="WestHam"
+                    team-logo="${westhamLogo}"></single-team-container>
+                <single-team-container class="team-div wolves" team-name="Wolves"
+                   team-logo="${wolvesLogo}"></single-team-container>
+
+                    `
+    }
+
+    extractAllTeams();
+
     /*
         const arsenalDiv = document.querySelector(".arsenal");
         const manCityDiv = document.querySelector(".man-city");

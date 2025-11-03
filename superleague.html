@@ -33,36 +33,7 @@
                 <div class="data-div data-div-two"></div>
             </div>
 
-            <div class="all-teams-container">
-
-                <single-team-container class="team-div olympiakos" team-name="Olympiakos"
-                    team-logo="olympiakos.png"></single-team-container>
-                <single-team-container class="team-div aek" team-name="Aek" team-logo="aek.png"></single-team-container>
-                <single-team-container class="team-div aris" team-name="Aris"
-                    team-logo="aris.png"></single-team-container>
-                <single-team-container class="team-div volos" team-name="Volos"
-                    team-logo="panseraikos.png"></single-team-container>
-                <single-team-container class="team-div panseraikos" team-name="Panseraikos"
-                    team-logo="panseraikos.png"></single-team-container>
-                <single-team-container class="team-div asteras" team-name="Asteras Tripolis"
-                    team-logo="asteras-tripolis.png"></single-team-container>
-                <single-team-container class="team-div kifisia" team-name="Kifisia"
-                    team-logo="kifisia.jpg"></single-team-container>
-                <single-team-container class="team-div panetolikos" team-name="Panetolikos"
-                    team-logo="panetolikos.jpg"></single-team-container>
-                <single-team-container class="team-div ofi" team-name="Ofi" team-logo="ofi.png"></single-team-container>
-                <single-team-container class="team-div larissa" team-name="Larissa"
-                    team-logo="ael.png"></single-team-container>
-                <single-team-container class="team-div atromitos" team-name="Atromitos"
-                    team-logo="atromitos.jpg"></single-team-container>
-                <single-team-container class="team-div levadiakos" team-name="Levadiakos"
-                    team-logo="levadiakos.png"></single-team-container>
-                <single-team-container class="team-div paok" team-name="Paok"
-                    team-logo="paok.jpg"></single-team-container>
-                <single-team-container class="team-div panathinaikos " team-name="Panathinaikos"
-                    team-logo="panathinaikos.png"></single-team-container>
-
-            </div>
+            <div class="all-teams-container"></div>
         </div>
 
 
@@ -80,6 +51,112 @@
 <script src="./assets/components/close-button/close-button.js"></script>
 <script src="./assets/components/navigation/navigation.js"></script>
 <script>
+
+    const headers = {
+        "x-rapidapi-host": "v3.football.api-sports.io",
+        "x-rapidapi-key": "94d01bff67718f85de3f0532069fbbf1",
+    };
+
+
+    // To display logo image
+
+    let olympiakosLogo;
+    let aekLogo;
+    let panathinaikosLogo;
+    let paokLogo;
+    let panetolikosLogo;
+    let larisaLogo;
+    let asterasLogo;
+    let levadiakosLogo;
+    let arisLogo;
+    let ofiLogo;
+    let panseraikosLogo;
+    let volosLogo;
+    let kifisiaLogo;
+    let atromitosLogo;
+
+
+    function fetchAllTeams() {
+        return fetch("https://v3.football.api-sports.io/teams?league=197&season=2025", { headers }).then(response => response.json())
+            .then((data) => {
+                const allteams = data.response;
+                console.log("allTeams", allteams);
+                return allteams;
+            });
+    }
+
+    async function extractAllTeams() {
+        const allTeamsArray = await fetchAllTeams();
+        allTeamsArray.map(team => {
+            console.log("all", allTeamsArray)
+            let teamName = team.team.name;
+            console.log("name", teamName);
+            let teamLogo = team.team.logo;
+            if (teamName === "Olympiakos Piraeus") {
+                olympiakosLogo = teamLogo;
+            } else if (teamName === "AEK Athens FC") {
+                aekLogo = teamLogo;
+            } else if (teamName === "Panathinaikos") {
+                panathinaikosLogo = teamLogo;
+            } else if (teamName === "PAOK") {
+                paokLogo = teamLogo;
+            } else if (teamName === "Panetolikos") {
+                panetolikosLogo = teamLogo;
+            } else if (teamName === "Larisa") {
+                larisaLogo = teamLogo;
+            } else if (teamName === "Asteras Tripolis") {
+                asterasLogo = teamLogo;
+            } else if (teamName === "Levadiakos") {
+                levadiakosLogo = teamLogo;
+            } else if (teamName === "Aris Thessalonikis") {
+                arisLogo = teamLogo;
+            } else if (teamName === "OFI") {
+                ofiLogo = teamLogo;
+            } else if (teamName === "Panserraikos") {
+                panseraikosLogo = teamLogo;
+            } else if (teamName === "Volos NFC") {
+                volosLogo = teamLogo;
+            } else if (teamName === "Kifisia") {
+                kifisiaLogo = teamLogo;
+            } else if (teamName === "Atromitos") {
+                atromitosLogo = teamLogo;
+            }
+        })
+
+        const allTeamsContainer = document.querySelector(".all-teams-container");
+        allTeamsContainer.innerHTML = `
+                 <single-team-container class="team-div olympiakos" team-name="Olympiakos"
+                    team-logo="${olympiakosLogo}"></single-team-container>
+                <single-team-container class="team-div aek" team-name="Aek"  team-logo="${aekLogo}""></single-team-container>
+                <single-team-container class="team-div aris" team-name="Aris"
+                    team-logo="${arisLogo}"></single-team-container>
+                <single-team-container class="team-div volos" team-name="Volos"
+                    team-logo="${volosLogo}"></single-team-container>
+                <single-team-container class="team-div panseraikos" team-name="Panseraikos"
+                   team-logo="${panseraikosLogo}""></single-team-container>
+                <single-team-container class="team-div asteras" team-name="Asteras Tripolis"
+                    team-logo="${asterasLogo}"></single-team-container>
+                <single-team-container class="team-div kifisia" team-name="Kifisia"
+                   team-logo="${kifisiaLogo}"></single-team-container>
+                <single-team-container class="team-div panetolikos" team-name="Panetolikos"
+                    team-logo="${panetolikosLogo}"></single-team-container>
+                <single-team-container class="team-div ofi" team-name="Ofi"  team-logo="${ofiLogo}"></single-team-container>
+                <single-team-container class="team-div larissa" team-name="Larissa"
+                     team-logo="${larisaLogo}"></single-team-container>
+                <single-team-container class="team-div atromitos" team-name="Atromitos"
+                    team-logo="${atromitosLogo}"></single-team-container>
+                <single-team-container class="team-div levadiakos" team-name="Levadiakos"
+                     team-logo="${levadiakosLogo}"></single-team-container>
+                <single-team-container class="team-div paok" team-name="Paok"
+                     team-logo="${paokLogo}"></single-team-container>
+                <single-team-container class="team-div panathinaikos " team-name="Panathinaikos"
+                    team-logo="${panathinaikosLogo}"></single-team-container>
+
+                    `
+    }
+
+    extractAllTeams();
+
 
     const olympiakosDiv = document.querySelector(".olympiakos");
     const aekDiv = document.querySelector(".aek");
