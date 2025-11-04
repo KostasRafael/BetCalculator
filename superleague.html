@@ -37,20 +37,23 @@
         </div>
 
 
-        <!--next 7 games with odds-->
         <div class="next-fixtures-container">
 
         </div>
     </section>
 
 </body>
-<script src="./superleague-next-seven-games-odds.js"></script>
 <script src="./assets/components/single-team-container/single-team-container.js" type="module" defer></script>
 <script src="./assets/components/fixtures-row/fixtures-row.js"></script>
 <script src="./assets/components/next-fixture-row/next-fixture-row.js"></script>
 <script src="./assets/components/close-button/close-button.js"></script>
 <script src="./assets/components/navigation/navigation.js"></script>
+<script src="./functions.js"></script>
 <script>
+
+    const nextFixturesContainer = document.querySelector(".next-fixtures-container");
+
+    fetchNextFixtures(197);
 
     const headers = {
         "x-rapidapi-host": "v3.football.api-sports.io",

@@ -23,58 +23,15 @@
                 <div class="data-div data-div-two"></div>
             </div>
 
-            <div class="all-teams-container">
-                <single-team-container class="team-div real-madrid" team-name="Real Madrid"
-                    team-logo="olympiakos.png"></single-team-container>
-                <single-team-container class="team-div barcelona" team-name="Barcelona"
-                    team-logo="aek.png"></single-team-container>
-                <single-team-container class="team-div villareal" team-name="Villarreal"
-                    team-logo="aris.png"></single-team-container>
-                <single-team-container class="team-div atletico-madrid" team-name="Atletico Madrid"
-                    team-logo="panseraikos.png"></single-team-container>
-                <single-team-container class="team-div real-betis" team-name="Real Betis"
-                    team-logo="panseraikos.png"></single-team-container>
-                <single-team-container class="team-div espanyol" team-name="Espanyol"
-                    team-logo="asteras-tripolis.png"></single-team-container>
-                <single-team-container class="team-div elche" team-name="Elche"
-                    team-logo="kifisia.jpg"></single-team-container>
-                <single-team-container class="team-div athletic-club" team-name="Athletic Club"
-                    team-logo="panetolikos.jpg"></single-team-container>
-                <single-team-container class="team-div sevilla" team-name="Sevilla"
-                    team-logo="ofi.png"></single-team-container>
-                <single-team-container class="team-div alaves" team-name="Alaves"
-                    team-logo="ael.png"></single-team-container>
-                <single-team-container class="team-div Rayo-vallecano" team-name="Rayo Vallecano"
-                    team-logo="atromitos.jpg"></single-team-container>
-                <single-team-container class="team-div getafe" team-name="Getafe"
-                    team-logo="levadiakos.png"></single-team-container>
-                <single-team-container class="team-div osasuna" team-name="Osasuna"
-                    team-logo="paok.jpg"></single-team-container>
-                <single-team-container class="team-div valencia" team-name="Valencia"
-                    team-logo="panathinaikos.png"></single-team-container>
-                <single-team-container class="team-div levante" team-name="Levante"
-                    team-logo="panathinaikos.png"></single-team-container>
-                <single-team-container class="team-div mallorca" team-name="Mallorca"
-                    team-logo="panathinaikos.png"></single-team-container>
-                <single-team-container class="team-div celta-vigo" team-name="Celtavigo"
-                    team-logo="panathinaikos.png"></single-team-container>
-                <single-team-container class="team-div real-sociedad" team-name="Realsociedad"
-                    team-logo="panathinaikos.png"></single-team-container>
-                <single-team-container class="team-div oviedo" team-name="Oviedo"
-                    team-logo="panathinaikos.png"></single-team-container>
-                <single-team-container class="team-div girona" team-name="Girona"
-                    team-logo="panathinaikos.png"></single-team-container>
-            </div>
+            <div class="all-teams-container"> </div>
         </div>
 
-        <div class="next-fixtures-container">
-            <h4 class="next-fixture-row-h4">Upcoming Fixtures</h4>
-        </div>
+        <div class="next-fixtures-container"> </div>
     </section>
 
 
 
-    <script src="./laliga-next-seven-games-odds.js"></script>
+    <script src="./functions.js"></script>
     <script src="https://kit.fontawesome.com/50ab0d686f.js" crossorigin="anonymous"></script>
     <script src="./assets/components/navigation/navigation.js"></script>
     <script src="./assets/components/close-button/close-button.js"></script>
@@ -84,6 +41,148 @@
     <script src="./laliga-functions.js"></script>
 </body>
 <script>
+
+    const nextFixturesContainer = document.querySelector(".next-fixtures-container");
+    fetchNextFixtures(140);
+
+    const headers = {
+        "x-rapidapi-host": "v3.football.api-sports.io",
+        "x-rapidapi-key": "94d01bff67718f85de3f0532069fbbf1",
+    };
+
+
+    // To display logo image
+
+    let realMadridLogo;
+    let barcelonaLogo;
+    let villarrealLogo;
+    let atleticoLogo;
+    let realBetisLogo;
+    let espanyolLogo;
+    let elcheLogo;
+    let athleticLogo;
+    let sevillaLogo;
+    let alavesLogo;
+    let rayoLogo;
+    let getafeLogo;
+    let osasunaLogo;
+    let valenciaLogo;
+    let levanteLogo;
+    let mallorcaLogo;
+    let celtavigoLogo;
+    let realsociedadLogo;
+    let oviedoLogo;
+    let gironaLogo;
+
+
+
+    function fetchAllTeams() {
+        return fetch("https://v3.football.api-sports.io/teams?league=140&season=2025", { headers }).then(response => response.json())
+            .then((data) => {
+                const allteams = data.response;
+                console.log("allTeams", allteams);
+                return allteams;
+            });
+    }
+
+    async function extractAllTeams() {
+        const allTeamsArray = await fetchAllTeams();
+        allTeamsArray.map(team => {
+            console.log("all", allTeamsArray)
+            let teamName = team.team.name;
+            console.log("name", teamName);
+            let teamLogo = team.team.logo;
+            if (teamName === "Barcelona") {
+                barcelonaLogo = teamLogo;
+            } else if (teamName === "Atletico Madrid") {
+                atleticoLogo = teamLogo;
+            } else if (teamName === "Athletic Club") {
+                athleticLogo = teamLogo;
+            } else if (teamName === "Valencia") {
+                valenciaLogo = teamLogo;
+            } else if (teamName === "Villarreal") {
+                villarrealLogo = teamLogo;
+            } else if (teamName === "Sevilla") {
+                sevillaLogo = teamLogo;
+            } else if (teamName === "Celta Vigo") {
+                celtavigoLogo = teamLogo;
+            } else if (teamName === "Levante") {
+                levanteLogo = teamLogo;
+            } else if (teamName === "Espanyol") {
+                espanyolLogo = teamLogo;
+            } else if (teamName === "Real Madrid") {
+                realMadridLogo = teamLogo;
+            } else if (teamName === "Alaves") {
+                alavesLogo = teamLogo;
+            } else if (teamName === "Real Betis") {
+                realBetisLogo = teamLogo;
+            } else if (teamName === "Getafe") {
+                getafeLogo = teamLogo;
+            } else if (teamName === "Girona") {
+                gironaLogo = teamLogo;
+            } else if (teamName === "Real Sociedad") {
+                realsociedadLogo = teamLogo;
+            } else if (teamName === "Oviedo") {
+                oviedoLogo = teamLogo;
+            } else if (teamName === "Osasuna") {
+                osasunaLogo = teamLogo;
+            } else if (teamName === "Rayo Vallecano") {
+                rayoLogo = teamLogo;
+            } else if (teamName === "Elche") {
+                elcheLogo = teamLogo;
+            } else if (teamName === "Mallorca") {
+                mallorcaLogo = teamLogo;
+            }
+        })
+
+        const allTeamsContainer = document.querySelector(".all-teams-container");
+        allTeamsContainer.innerHTML = `
+     <single-team-container class="team-div real-madrid" team-name="Real Madrid"
+                    team-logo="${realMadridLogo}"></single-team-container>
+                <single-team-container class="team-div barcelona" team-name="Barcelona"
+                    team-logo="${barcelonaLogo}"></single-team-container>
+                <single-team-container class="team-div villareal" team-name="Villarreal"
+                    team-logo="${villarrealLogo}"></single-team-container>
+                <single-team-container class="team-div atletico-madrid" team-name="Atletico Madrid"
+                    team-logo="${atleticoLogo}"></single-team-container>
+                <single-team-container class="team-div real-betis" team-name="Real Betis"
+                    team-logo="${realBetisLogo}"></single-team-container>
+                <single-team-container class="team-div espanyol" team-name="Espanyol"
+                    team-logo="${espanyolLogo}"></single-team-container>
+                <single-team-container class="team-div elche" team-name="Elche"
+                    team-logo="${elcheLogo}"></single-team-container>
+                <single-team-container class="team-div athletic-club" team-name="Athletic Club"
+                    team-logo="${athleticLogo}"></single-team-container>
+                <single-team-container class="team-div sevilla" team-name="Sevilla"
+                    team-logo="${sevillaLogo}"></single-team-container>
+                <single-team-container class="team-div alaves" team-name="Alaves"
+                    team-logo="${alavesLogo}"></single-team-container>
+                <single-team-container class="team-div Rayo-vallecano" team-name="Rayo Vallecano"
+                    team-logo="${rayoLogo}"></single-team-container>
+                <single-team-container class="team-div getafe" team-name="Getafe"
+                    team-logo="${getafeLogo}"></single-team-container>
+                <single-team-container class="team-div osasuna" team-name="Osasuna"
+                    team-logo="${osasunaLogo}"></single-team-container>
+                <single-team-container class="team-div valencia" team-name="Valencia"
+                    team-logo="${valenciaLogo}"></single-team-container>
+                <single-team-container class="team-div levante" team-name="Levante"
+                    team-logo="${levanteLogo}"></single-team-container>
+                <single-team-container class="team-div mallorca" team-name="Mallorca"
+                    team-logo="${mallorcaLogo}"></single-team-container>
+                <single-team-container class="team-div celta-vigo" team-name="Celtavigo"
+                    team-logo="${celtavigoLogo}"></single-team-container>
+                <single-team-container class="team-div real-sociedad" team-name="Realsociedad"
+                    team-logo="${realsociedadLogo}"></single-team-container>
+                <single-team-container class="team-div oviedo" team-name="Oviedo"
+                    team-logo="${oviedoLogo}"></single-team-container>
+                <single-team-container class="team-div girona" team-name="Girona"
+                    team-logo="${gironaLogo}"></single-team-container>
+
+                    `
+    }
+
+    extractAllTeams();
+
 
     const arsenalDiv = document.querySelector(".real-madrid");
     const manCityDiv = document.querySelector(".barcelona");

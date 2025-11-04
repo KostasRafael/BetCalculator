@@ -12,8 +12,6 @@ class navigationCustom extends HTMLElement {
                 <ul class="nav-menu">
                     <li><a href="./index.html">Home</a></li>
                     <li><a href="#">Leagues</a></li>
-                    <li><a href="#">Teames</a></li>
-                    <li><a href="#">News</a></li>
                 </ul>
             </nav>
         </div>

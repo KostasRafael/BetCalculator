@@ -67,11 +67,9 @@
             </div>
         </div>
 
-        <div class="next-fixtures-container">
-            <h4 class="next-fixture-row-h4">Upcoming Fixtures</h4>
-        </div>
+        <div class="next-fixtures-container"></div>
     </section>
-    <script src="./premierleague-next-seven-games-odds.js"></script>
+    <script src="./functions.js"></script>
     <script src="./assets/components/next-fixture-row/next-fixture-row.js"></script>
     <script src="https://kit.fontawesome.com/50ab0d686f.js" crossorigin="anonymous"></script>
     <script src="./premier-league-funcions.js"></script>
@@ -81,6 +79,10 @@
     <script src="./assets/components/single-team-container/single-team-container.js" type="module" defer></script>
 </body>
 <script>
+
+    const nextFixturesContainer = document.querySelector(".next-fixtures-container");
+    fetchNextFixtures(39);
+
     const headers = {
         "x-rapidapi-host": "v3.football.api-sports.io",
         "x-rapidapi-key": "94d01bff67718f85de3f0532069fbbf1",
