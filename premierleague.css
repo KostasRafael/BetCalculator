@@ -91,6 +91,10 @@ body {
     height: 250px;
   }
 
+  .row {
+    gap: 15px;
+  }
+
   .data-div h5 {
     font-size: 8px;
   }
