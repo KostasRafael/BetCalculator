@@ -53,112 +53,45 @@
 
     const nextFixturesContainer = document.querySelector(".next-fixtures-container");
 
-    fetchNextFixtures(197);
-
-    const headers = {
-        "x-rapidapi-host": "v3.football.api-sports.io",
-        "x-rapidapi-key": "94d01bff67718f85de3f0532069fbbf1",
-    };
 
 
-    // To display logo image
-
-    let olympiakosLogo;
-    let aekLogo;
-    let panathinaikosLogo;
-    let paokLogo;
-    let panetolikosLogo;
-    let larisaLogo;
-    let asterasLogo;
-    let levadiakosLogo;
-    let arisLogo;
-    let ofiLogo;
-    let panseraikosLogo;
-    let volosLogo;
-    let kifisiaLogo;
-    let atromitosLogo;
+    const leagueId = 197;
 
 
-    function fetchAllTeams() {
-        return fetch("https://v3.football.api-sports.io/teams?league=197&season=2025", { headers }).then(response => response.json())
-            .then((data) => {
-                const allteams = data.response;
-                console.log("allTeams", allteams);
-                return allteams;
-            });
-    }
 
-    async function extractAllTeams() {
-        const allTeamsArray = await fetchAllTeams();
-        allTeamsArray.map(team => {
-            console.log("all", allTeamsArray)
-            let teamName = team.team.name;
-            console.log("name", teamName);
-            let teamLogo = team.team.logo;
-            if (teamName === "Olympiakos Piraeus") {
-                olympiakosLogo = teamLogo;
-            } else if (teamName === "AEK Athens FC") {
-                aekLogo = teamLogo;
-            } else if (teamName === "Panathinaikos") {
-                panathinaikosLogo = teamLogo;
-            } else if (teamName === "PAOK") {
-                paokLogo = teamLogo;
-            } else if (teamName === "Panetolikos") {
-                panetolikosLogo = teamLogo;
-            } else if (teamName === "Larisa") {
-                larisaLogo = teamLogo;
-            } else if (teamName === "Asteras Tripolis") {
-                asterasLogo = teamLogo;
-            } else if (teamName === "Levadiakos") {
-                levadiakosLogo = teamLogo;
-            } else if (teamName === "Aris Thessalonikis") {
-                arisLogo = teamLogo;
-            } else if (teamName === "OFI") {
-                ofiLogo = teamLogo;
-            } else if (teamName === "Panserraikos") {
-                panseraikosLogo = teamLogo;
-            } else if (teamName === "Volos NFC") {
-                volosLogo = teamLogo;
-            } else if (teamName === "Kifisia") {
-                kifisiaLogo = teamLogo;
-            } else if (teamName === "Atromitos") {
-                atromitosLogo = teamLogo;
-            }
-        })
-
+    async function renderTeams(leagueId) {
+        const allLeagueTeams = await readyAllTeams(leagueId);
+        console.log("allLeagueTeams", allLeagueTeams);
         const allTeamsContainer = document.querySelector(".all-teams-container");
-        allTeamsContainer.innerHTML = `
-                 <single-team-container class="team-div olympiakos" team-name="Olympiakos"
-                    team-logo="${olympiakosLogo}"></single-team-container>
-                <single-team-container class="team-div aek" team-name="Aek"  team-logo="${aekLogo}""></single-team-container>
-                <single-team-container class="team-div aris" team-name="Aris"
-                    team-logo="${arisLogo}"></single-team-container>
-                <single-team-container class="team-div volos" team-name="Volos"
-                    team-logo="${volosLogo}"></single-team-container>
-                <single-team-container class="team-div panseraikos" team-name="Panseraikos"
-                   team-logo="${panseraikosLogo}""></single-team-container>
-                <single-team-container class="team-div asteras" team-name="Asteras Tripolis"
-                    team-logo="${asterasLogo}"></single-team-container>
-                <single-team-container class="team-div kifisia" team-name="Kifisia"
-                   team-logo="${kifisiaLogo}"></single-team-container>
-                <single-team-container class="team-div panetolikos" team-name="Panetolikos"
-                    team-logo="${panetolikosLogo}"></single-team-container>
-                <single-team-container class="team-div ofi" team-name="Ofi"  team-logo="${ofiLogo}"></single-team-container>
-                <single-team-container class="team-div larissa" team-name="Larissa"
-                     team-logo="${larisaLogo}"></single-team-container>
-                <single-team-container class="team-div atromitos" team-name="Atromitos"
-                    team-logo="${atromitosLogo}"></single-team-container>
-                <single-team-container class="team-div levadiakos" team-name="Levadiakos"
-                     team-logo="${levadiakosLogo}"></single-team-container>
-                <single-team-container class="team-div paok" team-name="Paok"
-                     team-logo="${paokLogo}"></single-team-container>
-                <single-team-container class="team-div panathinaikos " team-name="Panathinaikos"
-                    team-logo="${panathinaikosLogo}"></single-team-container>
-
-                    `
+        const allTeamsArray = Object.entries(allLeagueTeams);
+        console.log("allTeamsArray in qiestion", allTeamsArray);
+        allTeamsArray.forEach((team) => {
+            const teamId = team[1].id;
+            console.log("teamId in question", teamId);
+            const teamName = team[1].name;
+            const teamLogo = team[1].logo;
+            const teamNameOneWord = teamName.split(" ")[0];
+            console.log("teamNameOneWord", teamNameOneWord);
+            const teamContainer = document.createElement("single-team-container");
+            teamContainer.classList.add("team-div");
+            teamContainer.classList.add(teamNameOneWord);
+            teamContainer.setAttribute("team-id", teamId);
+            teamContainer.setAttribute("team-name", teamName);
+            teamContainer.setAttribute("team-logo", teamLogo);
+            allTeamsContainer.appendChild(teamContainer);
+        })
     }
 
-    extractAllTeams();
+    renderTeams(leagueId);
+
+
+
+
+
+
+
+
+
 
 
     const olympiakosDiv = document.querySelector(".olympiakos");
@@ -176,55 +109,30 @@
     const arisDiv = document.querySelector(".aris");
     const volosDiv = document.querySelector(".volos");
 
-    const allTeams = [
-        { id: 553, name: "olympiakos" },
-        { id: 575, name: "aek" },
-        { id: 617, name: "panathinaikos" },
-        { id: 619, name: "paok" },
-        { id: 949, name: "panetolikos" },
-        { id: 953, name: "larissa" },
-        { id: 955, name: "asteras" },
-        { id: 957, name: "levadiakos" },
-        { id: 1123, name: "aris" },
-        { id: 1124, name: "ofi" },
-        { id: 2099, name: "panseraikos" },
-        { id: 2110, name: "volos" },
-        { id: 5050, name: "kifisia" },
-        { id: 12260, name: "atromitos" }
-    ]
 
-    // The variables where each array of fixtures is saved once the fetchAndSaveAllTeamFixtures() function is executed
-    let olympiakosFixtures;
-    let aekFixtures
-    let panathinaikosFixtures;
-    let paokFixtures;
-    let panetolikosFixtures;
-    let larissaFixtures;
-    let asterasFixtures;
-    let levadiakosFixtures;
-    let arisFixtures;
-    let ofiFixtures;
-    let panseraikosFixtures;
-    let volosFixtures;
-    let kifisiaFixtures;
-    let atromitosFixtures;
 
-    // fetches the past 10 fixtures of each team, and stores each array of fixtures within the variables
-    fetchAndSaveAllTeamsFixtures();
 
     const screen = document.querySelector(".screen");
     const dataDivOne = document.querySelector(".data-div-one");
     const dataDivTwo = document.querySelector(".data-div-two");
 
 
+    const headers = {
+        "x-rapidapi-host": "v3.football.api-sports.io",
+        "x-rapidapi-key": "94d01bff67718f85de3f0532069fbbf1",
+    };
+
     // The clickedTeamFixturesArray is passed where the function is called in the
-    async function displayTeamFixtures(teamFixtures) {
-        await fetchAndSaveAllTeamsFixtures();
+    async function displayTeamFixtures(teamId) {
+        console.log("teamId in", teamId);
+        const response = await fetch(`https://v3.football.api-sports.io/fixtures?team=${teamId}&league=${leagueId}&season=2025&last=10`, { headers });
+        const responseJson = await response.json();
+        const fixtures = responseJson.response;
+        console.log("fixtures i function", fixtures);
 
         // Huge: allFixturesDiv is created only once you have clicked the button
         let allFixturesDiv = document.createElement("div");
         allFixturesDiv.classList.add("all-fixtures-div");
-
         let closeButton = document.createElement("close-button");
         allFixturesDiv.appendChild(closeButton);
 
@@ -235,7 +143,7 @@
 
 
 
-        for (fixture of teamFixtures) {
+        for (fixture of fixtures) {
             let fixtureRow = document.createElement("fixtures-row");
             fixtureRow.setAttribute("home-team-name", fixture.teams.home.name);
             fixtureRow.setAttribute("away-team-name", fixture.teams.away.name);
@@ -267,8 +175,6 @@
     }
 
 
-    // Function that will be executed upon the execution of an event
-    // It will be able to receive an event object as argument
     function clearDataDivOne() {
         dataDivOne.classList.remove("show");
         dataDivOne.querySelector(".all-fixtures-div").remove();
@@ -278,10 +184,6 @@
         dataDivTwo.classList.remove("show");
         dataDivTwo.querySelector(".all-fixtures-div").remove();
     }
-
-
-
-
 
 
 

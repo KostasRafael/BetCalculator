@@ -29,7 +29,6 @@
         </div>
 
         <div class="next-fixtures-container">
-            <h4 class="next-fixture-row-h4">Upcoming Fixtures</h4>
         </div>
     </section>
 
@@ -44,207 +43,58 @@
 </body>
 <script>
 
-    const nextFixturesContainer = document.querySelector(".next-fixtures-container");
-    fetchNextFixtures(78);
 
-    const headers = {
-        "x-rapidapi-host": "v3.football.api-sports.io",
-        "x-rapidapi-key": "94d01bff67718f85de3f0532069fbbf1",
-    };
+    const leagueId = 78;
 
-
-    // To display logo image
-
-    let bayernLogo;
-    let freiburgLogo;
-    let wolfsburgLogo;
-    let werderLogo;
-    let monchengladbachLogo;
-    let mainzLogo;
-    let dortmundLogo;
-    let hoffenheimLogo;
-    let leverkusenLogo;
-    let eintrachtLogo;
-    let augsburgLogo;
-    let stuttgartLogo;
-    let leipzigLogo;
-    let hamburgerLogo;
-    let heidenheimLogo;
-    let berlinLogo;
-    let pauliLogo;
-    let kolnLogo;
-
-    function fetchAllTeams() {
-        return fetch("https://v3.football.api-sports.io/teams?league=78&season=2025", { headers }).then(response => response.json())
-            .then((data) => {
-                const allteams = data.response;
-                console.log("allTeams", allteams);
-                return allteams;
-            });
-    }
-
-    async function extractAllTeams() {
-        const allTeamsArray = await fetchAllTeams();
-        allTeamsArray.map(team => {
-            console.log("all", allTeamsArray)
-            let teamName = team.team.name;
-            console.log("name", teamName);
-            let teamLogo = team.team.logo;
-            if (teamName === "Bayern München") {
-                bayernLogo = teamLogo;
-            } else if (teamName === "SC Freiburg") {
-                freiburgLogo = teamLogo;
-            } else if (teamName === "VfL Wolfsburg") {
-                wolfsburgLogo = teamLogo;
-            } else if (teamName === "Werder Bremen") {
-                werderLogo = teamLogo;
-            } else if (teamName === "Borussia Mönchengladbach") {
-                monchengladbachLogo = teamLogo;
-            } else if (teamName === "FSV Mainz 05") {
-                mainzLogo = teamLogo;
-            } else if (teamName === "Borussia Dortmund") {
-                dortmundLogo = teamLogo;
-            } else if (teamName === "1899 Hoffenheim") {
-                hoffenheimLogo = teamLogo;
-            } else if (teamName === "Bayer Leverkusen") {
-                leverkusenLogo = teamLogo;
-            } else if (teamName === "Eintracht Frankfurt") {
-                eintrachtLogo = teamLogo;
-            } else if (teamName === "FC Augsburg") {
-                augsburgLogo = teamLogo;
-            } else if (teamName === "VfB Stuttgart") {
-                stuttgartLogo = teamLogo;
-            } else if (teamName === "RB Leipzig") {
-                leipzigLogo = teamLogo;
-            } else if (teamName === "Hamburger SV") {
-                hamburgerLogo = teamLogo;
-            } else if (teamName === "1. FC Heidenheim") {
-                heidenheimLogo = teamLogo;
-            } else if (teamName === "Union Berlin") {
-                berlinLogo = teamLogo;
-            } else if (teamName === "FC St. Pauli") {
-                pauliLogo = teamLogo;
-            } else if (teamName === "1.FC Köln") {
-                kolnLogo = teamLogo;
-            }
-        })
-
+    async function renderTeams(leagueId) {
+        const allLeagueTeams = await readyAllTeams(leagueId);
+        console.log("allLeagueTeams", allLeagueTeams);
         const allTeamsContainer = document.querySelector(".all-teams-container");
-        allTeamsContainer.innerHTML = `
-                <single-team-container class="team-div bayern" team-name="Bayern" team-logo=${bayernLogo}></single-team-container>
-                <single-team-container class="team-div leipzig" team-name="RB Leipzig" team-logo=${leipzigLogo}></single-team-container>
-                <single-team-container class="team-div stuttgart" team-name="VfB Stuttgart" team-logo=${stuttgartLogo}></single-team-container>
-                <single-team-container class="team-div dortmund" team-name="Dortmund" team-logo=${dortmundLogo}></single-team-container>
-                <single-team-container class="team-div leverkuzen" team-name="Leverkusen" team-logo=${leverkusenLogo}></single-team-container>
-                <single-team-container class="team-div koln" team-name="Koln" team-logo=${kolnLogo}></single-team-container>
-                <single-team-container class="team-div eintracht" team-name="Eintracht Frankfurt" team-logo=${eintrachtLogo}></single-team-container>
-                <single-team-container class="team-div .hoffenheim" team-name="Hoffenheim" team-logo=${hoffenheimLogo}></single-team-container>
-                <single-team-container class="team-div berlin" team-name="Union Berlin" team-logo=${berlinLogo}></single-team-container>
-                <single-team-container class="team-div freiburb" team-name="SC Freiburg" team-logo=${freiburgLogo}></single-team-container>
-                <single-team-container class="team-div hamburger" team-name="Hamburger SV" team-logo=${hamburgerLogo}></single-team-container>
-                <single-team-container class="team-div werder" team-name="Werder Bremen" team-logo=${werderLogo}></single-team-container>
-                <single-team-container class="team-div augsburg" team-name="Augsburg" team-logo=${augsburgLogo}></single-team-container>
-                <single-team-container class="team-div pauli" team-name="St Pauli" team-logo=${pauliLogo}></single-team-container>
-                <single-team-container class="team-div wolfsburg" team-name="VfL Wolfsburg" team-logo=${wolfsburgLogo}></single-team-container>
-                <single-team-container class="team-div mainz" team-name="Mainz" team-logo=${mainzLogo}></single-team-container>
-                <single-team-container class="team-div heidenheim" team-name="Heidenheim" team-logo=${heidenheimLogo}></single-team-container>
-                <single-team-container class="team-div monchengladbach"team-name="Borussia Mönchengladbach" team-logo=${monchengladbachLogo}></single-team-container>
-                    `
+        const allTeamsArray = Object.entries(allLeagueTeams);
+        console.log("allTeamsArray in qiestion", allTeamsArray);
+        allTeamsArray.forEach((team) => {
+            const teamId = team[1].id;
+            console.log("teamId in question", teamId);
+            const teamName = team[1].name;
+            const teamLogo = team[1].logo;
+            const teamNameOneWord = teamName.split(" ")[0];
+            console.log("teamNameOneWord", teamNameOneWord);
+            const teamContainer = document.createElement("single-team-container");
+            teamContainer.classList.add("team-div");
+            teamContainer.classList.add(teamNameOneWord);
+            teamContainer.setAttribute("team-id", teamId);
+            teamContainer.setAttribute("team-name", teamName);
+            teamContainer.setAttribute("team-logo", teamLogo);
+            allTeamsContainer.appendChild(teamContainer);
+        })
     }
 
-    extractAllTeams();
-
-    /*const bayernContainer = document.querySelector(".bayern");
-    bayernContainer.setAttribute("team-logo", bayernLogo);
-    const freiburgContainer = document.querySelector(".freiburb");
-    freiburgContainer.setAttribute("team-logo", freiburgLogo);
-    const wolfsburgContainer = document.querySelector(".wolfsburg");
-    wolfsburgContainer.setAttribute("team-logo", wolfsburgLogo);
-    const werderContainer = document.querySelector(".werder");
-    werderContainer.setAttribute("team-logo", werderLogo);
-    const mönchengladbachContainer = document.querySelector(".monchengladbach");
-    mönchengladbachContainer.setAttribute("team-logo", monchengladbachLogo);
-    const mainzContainer = document.querySelector(".mainz");
-    mainzContainer.setAttribute("team-logo", mainzLogo);
-    const dortmundContainer = document.querySelector(".dortmund");
-    dortmundContainer.setAttribute("team-logo", dortmundLogo);
-    const hoffenheimContainer = document.querySelector(".hoffenheim");
-    hoffenheimContainer.setAttribute("team-logo", hoffenheimLogo);
-    const leverkusenContainer = document.querySelector(".leverkuzen");
-    leverkusenContainer.setAttribute("team-logo", leverkusenLogo);
-    const eintrachtContainer = document.querySelector(".eintracht");
-    eintrachtContainer.setAttribute("team-logo", eintrachtLogo);
-    const augsburgContainer = document.querySelector(".augsburg");
-    augsburgContainer.setAttribute("team-logo", augsburgLogo);
-    const stuttgartContainer = document.querySelector(".stuttgart");
-    stuttgartContainer.setAttribute("team-logo", stuttgartLogo);
-    const leipzigContainer = document.querySelector(".leipzig");
-    leipzigContainer.setAttribute("team-logo", leipzigLogo);
-    const hamburgerContainer = document.querySelector(".hamburger");
-    hamburgerContainer.setAttribute("team-logo", hamburgerLogo);
-    const heidenheimContainer = document.querySelector(".heidenheim");
-    heidenheimContainer.setAttribute("team-logo", heidenheimLogo);
-    const berlinContainer = document.querySelector(".berlin");
-    berlinContainer.setAttribute("team-logo", berlinLogo);
-    const pauliContainer = document.querySelector(".pauli");
-    pauliContainer.setAttribute("team-logo", pauliLogo);
-    const kolnContainer = document.querySelector(".koln");
-    kolnContainer.setAttribute("team-logo", kolnLogo);*/
+    renderTeams(78);
 
 
 
 
 
-    const allTeams = [
-        { id: 157, name: "bayernmunchen" },
-        { id: 160, name: "freiburg" },
-        { id: 161, name: "Wolfsburg" },
-        { id: 162, name: "werderbremen" },
-        { id: 163, name: "borussiamönchengladbach" },
-        { id: 164, name: "mainz" },
-        { id: 165, name: "borussiadortmund" },
-        { id: 167, name: "hoffenheim" },
-        { id: 168, name: "bayerleverkusen" },
-        { id: 169, name: "eintrachtfrankfurt" },
-        { id: 170, name: "augsburg" },
-        { id: 172, name: "stuttgart" },
-        { id: 173, name: "leipzig" },
-        { id: 175, name: "hamburgersv" },
-        { id: 180, name: "heidenheim" },
-        { id: 182, name: "unionberlin" },
-        { id: 186, name: "stpauli" },
-        { id: 192, name: "köln" },
-    ]
 
-    let bayernFixtures;
-    let rbleipzigFixtures;
-    let vfbstuttgartFixtures;
-    let dortmundFixtures;
-    let leverkusenFixtures;
-    let kolnFixtures;
-    let eintrachtfrankfurtFixtures;
-    let hoffenheimFixtures;
-    let unionberlinFixtures;
-    let scfreiburgFixtures;
-    let hamburgersvFixtures;
-    let werderbremenFixtures;
-    let augsburgFixtures;
-    let stpauliFixtures;
-    let vflwolfsburgFixtures;
-    let mainzFixtures;
-    let heidenheimFixtures;
-    let borussiamönchengladbachFixtures;
 
-    fetchAndSaveAllTeamsFixtures();
 
     const screen = document.querySelector(".screen");
     const dataDivOne = document.querySelector(".data-div-one");
     const dataDivTwo = document.querySelector(".data-div-two");
 
 
+    const headers = {
+        "x-rapidapi-host": "v3.football.api-sports.io",
+        "x-rapidapi-key": "94d01bff67718f85de3f0532069fbbf1",
+    };
+
     // The clickedTeamFixturesArray is passed where the function is called in the
-    async function displayTeamFixtures(teamFixtures) {
-        await fetchAndSaveAllTeamsFixtures();
+    async function displayTeamFixtures(teamId) {
+        console.log("teamId in", teamId);
+        const response = await fetch(`https://v3.football.api-sports.io/fixtures?team=${teamId}&league=${leagueId}&season=2025&last=10`, { headers });
+        const responseJson = await response.json();
+        const fixtures = responseJson.response;
+        console.log("fixtures i function", fixtures);
 
         // Huge: allFixturesDiv is created only once you have clicked the button
         let allFixturesDiv = document.createElement("div");
@@ -258,7 +108,8 @@
         allFixturesDiv.appendChild(resultsHeading);
 
 
-        for (fixture of teamFixtures) {
+
+        for (fixture of fixtures) {
             let fixtureRow = document.createElement("fixtures-row");
             fixtureRow.setAttribute("home-team-name", fixture.teams.home.name);
             fixtureRow.setAttribute("away-team-name", fixture.teams.away.name);
@@ -290,8 +141,6 @@
     }
 
 
-    // Function that will be executed upon the execution of an event
-    // It will be able to receive an event object as argument
     function clearDataDivOne() {
         dataDivOne.classList.remove("show");
         dataDivOne.querySelector(".all-fixtures-div").remove();
