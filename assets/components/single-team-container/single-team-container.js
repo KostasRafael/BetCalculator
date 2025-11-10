@@ -13,9 +13,9 @@ class singleTeamContainer extends HTMLElement {
     this.innerHTML = `
           <button class="team-logo-name-div" onclick="displayTeamFixtures(${teamId})">
             <div class="logo-name">  
-                <h4 class="team-name"> <img src="${teamLogo}" alt="" class="team-logo">  ${
+                <span class="team-name"> <img src="${teamLogo}" alt="" class="team-logo">  ${
       teamName.split(" ")[0]
-    }</h4>
+    }</span>
             </div>
             </button>
         `;
