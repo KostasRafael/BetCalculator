@@ -1,13 +1,16 @@
 /* fixtures-roe*/
 .data-div {
+  border: 2px solid yellow;
+  border-radius: 6px;
   height: max-content;
   width: 100%;
   max-width: 400px;
   display: flex;
   justify-content: space-between;
-  background-color: rgb(128, 128, 128, 0.2);
-  transform: translateY(50%);
-  opacity: 0;
+  background-color: rgba(255, 255, 255, 0.08);
+  /* background-color: rgb(128, 128, 128, 0.2); */
+  transform: translateY(100%);
+  opacity: 1;
   transition: opacity, transform, ease-in-out, 2s;
 }
 
@@ -17,36 +20,56 @@
 }
 /* fixtures-roe*/
 .row {
+  border: 2px solid purple;
   box-sizing: border-box;
-  display: flex;
-  gap: 40px;
-  justify-content: center;
+  display: grid;
+  gap: 50px;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 /* fixtures-roe*/
 .home-name-goals-col {
+  border: 2px solid yellow;
   display: flex;
-  align-items: center;
-  flex: 1;
   justify-content: space-between;
+  background-color: rgba(10, 19, 36, 0.6);
 }
 
 .away-name-goals-col {
+  border: 2px solid red;
   display: flex;
-  align-items: center;
-  flex: 1;
-  gap: 15px;
+  justify-content: space-between;
+  background-color: rgba(10, 19, 36, 0.6);
 }
 
-.away-goals {
-}
-
-.away-name {
-}
-/* fixtures-roe*/
-.data-div h4 {
+.fixtures-row-home-name {
+  color: rgb(109, 246, 255);
+  border: 1px solid green;
   margin: 0;
+  padding: 0;
+}
+
+.fixtures-row-away-name {
+  color: rgb(109, 246, 255);
+  border: 1px solid green;
+  margin: 0;
+  padding: 0;
+}
+/* fixtures-row*/
+.data-div h5 {
+  margin: 0;
+
+  /*
   background: linear-gradient(to right, rgb(255, 255, 255), rgb(41, 168, 172));
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
+  */
+}
+
+.fixtures-row-away-goals {
+  color: white;
+  border: 1px solid green;
+  margin: 0;
+  padding: 0;
 }
