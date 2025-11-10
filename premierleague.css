@@ -92,7 +92,19 @@ body {
   }
 
   .row {
-    gap: 15px;
+    background-color: bisque;
+    border: 4px solid brown;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .fixtures-row-away-name {
+    order: 0;
+  }
+
+  .fixtures-row-away-goals {
+    order: 1;
   }
 
   .data-div h5 {
