@@ -40,38 +40,6 @@ async function readyAllTeams(leagueId) {
 //------------------------------------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------------------------------------//
 
-// teamId: extracted from the team argument available when allTeams.forEach((team) => {  })
-// LeagueId: passed on function call within the html page
-const urlFixtures = `https://v3.football.api-sports.io/fixtures?team=${idOfCurrentTeam}&league=${someLeagueId}&season=2025&last=10`;
-
-/*
-async function fetchAndSaveTeamsFixtures(someTeamKey, someLeagueId) {
-  const team = allTeams[someTeamKey];
-  const idOfCurrentTeam = team.id;
-  const urlFixtures = `https://v3.football.api-sports.io/fixtures?team=${idOfCurrentTeam}&league=${someLeagueId}&season=2025&last=10`;
-  const responseFixtures = await fetch(urlFixtures, { headers });
-  if (!responseFixtures.ok)
-    throw new Error(`${team.name} failed: ${responseFixtures.status}`);
-  const fixtures = await responseFixtures.json();
-  team.fixturesArray = fixtures;
-  console.log("TeamFixturesUpdated", team);
-}
-
-async function fetchAllTeamsFixturesSequentially(someLeagueId) {
-  for (const someTeamKey in allTeams) {
-    try {
-      await fetchAndSaveTeamsFixtures(someTeamKey, someLeagueId);
-      console.log("fetched team!");
-    } catch (err) {
-      console.error(`Error fetching ${someTeamKey}:`, err);
-    }
-  }
-}
-
-async function fetchAndSaveAllTeamsFixtures(someLeagueId) {
-  await fetchAllTeamsFixturesSequentially(someLeagueId);
-}
-
 // Next Fixtures
 
 function fetchNextFixtures(leagueId) {
@@ -141,4 +109,4 @@ function fetchAllTeamsOfLeague(leagueId) {
       const allteams = data.response;
       console.log("allTeams", allteams);
     });
-} */
+}

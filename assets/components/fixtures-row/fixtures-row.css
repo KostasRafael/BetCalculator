@@ -6,7 +6,6 @@
   display: flex;
   justify-content: space-between;
   background-color: rgb(128, 128, 128, 0.2);
-
   transform: translateY(50%);
   opacity: 0;
   transition: opacity, transform, ease-in-out, 2s;
