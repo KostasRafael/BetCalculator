@@ -43,10 +43,8 @@
 }
 
 /* fixtures-row*/
-.data-div h5 {
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
+.data-div span {
+  font-size: 12px;
 
   /*
   background: linear-gradient(to right, rgb(255, 255, 255), rgb(41, 168, 172));
