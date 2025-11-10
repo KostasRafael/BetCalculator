@@ -92,11 +92,10 @@ body {
   }
 
   .row {
-    background-color: bisque;
     border: 4px solid brown;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0px;
   }
 
   .fixtures-row-away-name {
