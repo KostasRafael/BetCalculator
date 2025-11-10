@@ -110,6 +110,14 @@ body {
     font-size: 12px;
   }
 
+  .navigation-bar-container {
+    padding: 0 20px;
+  }
+
+  .logo-image {
+    width: 60px;
+  }
+
   .data-div h5 {
   }
 }
