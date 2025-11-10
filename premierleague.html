@@ -106,7 +106,7 @@
 
     // The clickedTeamFixturesArray is passed where the function is called in the
     async function displayTeamFixtures(teamId) {
-        const response = await fetch(`https://v3.football.api-sports.io/fixtures?team=${teamId}&league=${leagueId}&season=2025&last=10`, { headers });
+        const response = await fetch(`https://v3.football.api-sports.io/fixtures?team=${teamId}&league=${leagueId}&season=2025&last=5`, { headers });
         const responseJson = await response.json();
         const fixtures = responseJson.response;
         console.log("fixtures i function", fixtures);
@@ -116,7 +116,7 @@
         let closeButton = document.createElement("close-button");
         allFixturesDiv.appendChild(closeButton);
 
-        let resultsHeading = document.createElement("h2");
+        let resultsHeading = document.createElement("h3");
         resultsHeading.classList.add("results-heading");
         resultsHeading.textContent = `Results`;
         allFixturesDiv.appendChild(resultsHeading);
