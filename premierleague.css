@@ -126,6 +126,7 @@ body {
     width: 60px;
   }
 
-  .data-div h5 {
+  .next-fixtures-container {
+    max-width: 100%;
   }
 }
