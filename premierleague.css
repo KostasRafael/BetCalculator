@@ -30,12 +30,30 @@ html {
 body {
 }
 
-.screen {
+.keyboard-screen {
+  width: 100%;
+  max-width: 750px;
   display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.screen {
+  margin: 0 20px;
+  border: 1px solid rgb(128, 128, 128, 0.8);
+  display: flex;
+  justify-content: space-between;
+  height: 400px;
+  overflow: hidden;
+  padding: 0 20px;
+  border-radius: 15px;
   gap: 10px;
 }
 
 .all-fixtures-div {
+  border: 2px solid black;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -43,6 +61,7 @@ body {
 }
 
 .results-heading {
+  border: 2px solid green;
   color: white;
   text-align: center;
   margin: 0;
@@ -57,4 +76,14 @@ body {
   display: flex;
   justify-content: space-between;
   gap: 10px;
+}
+
+@media (max-width: 500px) {
+  .laptop-next-fixtures {
+    flex-direction: column;
+  }
+
+  .all-teams-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

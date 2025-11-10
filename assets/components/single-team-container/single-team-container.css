@@ -7,27 +7,6 @@ h5 {
 }
 /* single */
 
-.keyboard-screen {
-  width: 100%;
-  max-width: 750px;
-  display: flex;
-  flex-direction: column;
-  align-content: space-between;
-  position: relative;
-  z-index: 1;
-}
-
-.screen {
-  margin: 0 20px;
-  border: 1px solid rgb(128, 128, 128, 0.8);
-  display: flex;
-  justify-content: space-between;
-  height: 400px;
-  overflow: hidden;
-  padding: 0 20px;
-  border-radius: 15px;
-}
-
 .all-teams-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;

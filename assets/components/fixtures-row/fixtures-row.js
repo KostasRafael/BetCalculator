@@ -66,12 +66,12 @@ class fixturesRow extends HTMLElement {
     this.innerHTML = `
      <div class="row names-goals-row">
             <div class="home-name-goals-col">
-                <h4>${homeTeamRenderName}</h4>
-                <h4>${homeTeamGoals}</h4>
+                <h5 class="fixtures-row-home-name">${homeTeamRenderName}</h5>
+                <h5 class="fixtures-row-home-goals">${homeTeamGoals}</h5>
             </div>
             <div class="away-name-goals-col">
-              <h4 class="away-goals">${awayTeamGoals}</h4>
-              <h4 class="away-name">${awayTeamRenderName}</h4>
+              <h5 class="fixtures-row-away-goals">${awayTeamGoals}</h5>
+              <h5 class="fixtures-row-away-name">${awayTeamRenderName}</h5>
             </div>
         </div>
     `;
