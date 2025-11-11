@@ -229,14 +229,14 @@ body {
 
   .team-div {
     border-radius: 15px;
-    background-color: rgba(128, 128, 128, 0.4);
+    background-color: rgb(128, 128, 128 / 0.4);
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
   /* single */
   .team-div:hover {
-    background-color: rgba(128, 128, 128, 1);
+    background-color: rgb(128, 128, 128);
     cursor: pointer;
   }
   /* single */
