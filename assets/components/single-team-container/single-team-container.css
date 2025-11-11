@@ -44,10 +44,14 @@ h5 {
   text-align: center;
   background: linear-gradient(to right, rgb(255, 255, 255), rgb(41, 168, 172));
   -webkit-background-clip: text;
-  color: transparent;
   -webkit-text-fill-color: transparent;
-  flex-grow: 1;
+
+  /* Extra compatibility */
+  background-clip: text;
+  color: transparent;
+  display: inline-block; /* Important for some Android browsers */
 }
+
 /* single */
 .team-div h4:hover {
   background: white;
