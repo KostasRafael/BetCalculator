@@ -39,7 +39,7 @@ h5 {
   cursor: pointer;
 }
 /* single */
-.team-div h4 {
+.team-div span {
   margin: 0;
   text-align: center;
   background: linear-gradient(to right, rgb(255, 255, 255), rgb(41, 168, 172));
@@ -53,7 +53,7 @@ h5 {
 }
 
 /* single */
-.team-div h4:hover {
+.team-div span:hover {
   background: white;
   -webkit-background-clip: text;
 }
