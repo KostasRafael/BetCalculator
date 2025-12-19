@@ -10,8 +10,7 @@ class navigationCustom extends HTMLElement {
             <img src="./assets/images/image.png" alt="logo image" class="logo-image">
             <nav class="navigation-bar">
                 <ul class="nav-menu">
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="#">Leagues</a></li>
+                    <li><a href="./home.html">Home</a></li>
                 </ul>
             </nav>
         </div>

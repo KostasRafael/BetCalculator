@@ -1,237 +1,179 @@
 :root {
-  /* Background colors*/
-  --custom-background-color: radial-gradient(
+  --full-page-background: linear-gradient(90deg, #511557, #030c3c);
+  --full-page-background-transparent: radial-gradient(
       circle at bottom,
       rgba(0, 182, 185, 0.4),
       transparent
     ),
-    #0a1324;
+    rgba(10, 19, 36, 0.6);
 
-  --card-background-color: rgba(255, 255, 255, 0.08);
-  --card-background-color-hover: rgba(255, 255, 255, 0.122);
+  /*
+  linear-gradient(
+    90deg,
+    rgba(81, 21, 87, 0.7),
+    rgba(3, 12, 60, 0.7)
+  );
+  */
+  --cta-container-background: linear-gradient(90deg, #ba19ff, #672769);
+  --custom-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --tiny-font-size: 20px;
+  --small-font-size: 40px;
+  --medium-font-size: 25px;
+  --large-font-size: 80px;
+}
 
-  /* Font-families */
-  --font-family-primary: "Raleway", sans-serif;
-
-  /* Font colors */
-  --font-color-primary: #fff;
-  --font-color-secondary: #29a8ac;
-
-  /* Font sizes */
-  --font-size-small: 12px;
-  --font-size-default: 16px;
-  --font-size-large: 18px;
+* {
+  margin: 0;
+  padding: 0;
 }
 
 html {
-  background: var(--custom-background-color);
-}
-
-body {
-}
-
-/* Leagues Section */
-
-.leagues-section {
-  height: 400px;
-  background-image: url("./assets/images/fancy-crave-qowyMze7jqg-unsplash.jpg");
+  background: radial-gradient(
+      circle at bottom,
+      rgba(0, 182, 185, 0.6),
+      rgba(10, 19, 36, 1)
+    ),
+    url("./assets/images/fancy-crave-qowyMze7jqg-unsplash.jpg");
   background-size: cover;
-  background-position: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-/* I want it to always be 2 rows */
+.main-container {
+  height: 100vh;
+  padding: 40px;
+}
 
-.leagues-container {
-  background-color: #444343;
-  width: 400px;
-  height: 250px;
-  font-family: var(--font-family-primary);
-  border-radius: 5%;
+.container {
+  min-height: 100%;
+  padding: 20px 60px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 20px;
+  gap: 40px;
 }
 
-.leagues-container h4 {
-  color: white;
-  margin: 0;
-}
-
-.four-leagues-container {
-  box-sizing: border-box;
-  width: 100%;
-  height: 240px;
-  margin-top: 10px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
-.superleague-box,
-.premier-league-box,
-.laliga-box,
-.bundesliga-box {
-  box-sizing: border-box;
-  color: var(--font-color-secondary);
-  font-size: 20px;
-  height: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-}
-
-.league-heading {
-  margin: 0;
-  padding: 0;
-  color: var(--font-color-secondary);
-}
-
-.greek-flag,
-.british-flag,
-.spanish-flag,
-.german-flag {
-  width: 100%;
-  aspect-ratio: 1/0.4;
-  max-height: 100%;
-}
-
-.link-superleague,
-.link-premier-league,
-.link-laliga,
-.link-bundesliga {
-  color: inherit;
-  text-decoration: none;
-}
-
-.link-league {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* League Pages */
-
-.keyboard-screen {
-  width: 100%;
-  max-width: 750px;
-  display: flex;
-  flex-direction: column;
-  align-content: space-between;
-  position: relative;
-  z-index: 1;
-}
-
-.screen {
-  margin: 0 20px;
-  border: 1px solid rgb(128, 128, 128, 0.8);
-  display: flex;
-  justify-content: space-between;
-  aspect-ratio: 2.5/1;
-  overflow: hidden;
-  padding: 0 20px;
+.logo {
+  width: 150px;
   border-radius: 15px;
-  gap: 10px;
 }
 
-.all-fixtures-div {
-  border: 2px solid black;
-  width: 100%;
+.main-content {
+  display: flex;
+  gap: 40px;
+}
+
+.left-content {
+  width: 60%;
+  padding-left: 20px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 20px;
+  align-self: center;
 }
 
-.results-heading {
-  border: 2px solid green;
+h1 {
+  font-family: var(--custom-font-family);
   color: white;
-  text-align: center;
-  margin: 0;
-  padding: 0;
+  font-size: var(--large-font-size);
+  line-height: 1.2em;
+}
+
+h2 {
+  color: white;
+  font-family: var(--custom-font-family);
+  font-size: var(--small-font-size);
+  font-weight: 400;
+  text-decoration: underline;
+}
+.cta {
+  padding: 6px;
+  background: var(--cta-container-background);
+  color: white;
+  font-size: var(--medium-font-size);
+  transform: skew(-20deg);
+  align-self: flex-start;
+  cursor: pointer;
   font-weight: 700;
-  font-size: 20px;
 }
 
-.hide-button {
-  display: none;
-}
-
-.laptop-next-fixtures {
+.right-content {
+  width: 40%;
   display: flex;
-  justify-content: space-between;
   gap: 10px;
+  min-height: 400px;
+  padding-left: 60px;
 }
 
-@media (max-width: 890px) {
-  .screen {
-    aspect-ratio: 2/1;
+.quotes-container-left {
+  display: flex;
+  gap: 5px;
+  transform: skew(-20deg);
+  align-self: flex-start;
+}
+
+.quotes-container-right {
+  display: flex;
+  gap: 5px;
+  transform: skew(-20deg);
+  justify-self: center;
+  align-self: flex-end;
+}
+
+.quote {
+  width: 10px;
+  height: 40px;
+  border: 2px solid white;
+}
+
+.video-container {
+  width: 250px;
+  height: 100%;
+  box-sizing: border-box;
+  transform: skew(-20deg);
+}
+
+.match-video {
+  width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .container {
+    padding: 20px 0px;
   }
 
-  .fixtures-row {
-    gap: 20px;
+  .main-content {
+    margin-top: 70px;
+  }
+
+  .left-content {
+    width: 50%;
+  }
+
+  .right-content {
+    width: 50%;
+    padding-left: 20px;
+  }
+
+  .video-container {
   }
 }
 
-@media (max-width: 700px) {
-  .laptop-next-fixtures {
+@media (max-width: 1000px) {
+  .logo {
+    margin-left: 60px;
+  }
+
+  .main-content {
     flex-direction: column;
+    margin-top: 0px;
+    padding: 0 60px;
   }
 
-  .all-teams-container {
-    grid-template-columns: 1fr 1fr 1fr;
+  .left-content {
+    width: 100%;
+    box-sizing: border-box;
+    align-self: flex-start;
   }
 
-  .team-div {
-    background-color: white;
-  }
-
-  .team-div span {
-    color: black;
-  }
-
-  .screen {
-    height: 250px;
-  }
-
-  .fixtures-row {
-    border: 4px solid brown;
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-  }
-
-  .fixtures-row-away-name {
-    order: 0;
-  }
-
-  .fixtures-row-away-goals {
-    order: 1;
-  }
-
-  .team-name {
-    font-size: 12px;
-  }
-
-  .navigation-bar-container {
-    padding: 0 20px;
-  }
-
-  .nav-menu {
-    gap: 20px;
-  }
-
-  .nav-menu a {
-    font-size: 16px;
-  }
-
-  .logo-image {
-    width: 60px;
-  }
-
-  .next-fixtures-container {
-    max-width: 100%;
+  .right-content {
   }
 }

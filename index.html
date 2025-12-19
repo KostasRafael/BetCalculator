@@ -6,57 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./index.css" type="text/css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="./assets/components/navigation/navigation.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
 </head>
 
 <body>
-    <navigation-custom></navigation-custom>
-
-    <section class="leagues-section">
-        <div class="leagues-container">
-            <h4>Your favourite leagues!</h4>
-            <div class="four-leagues-container">
-
-                <div>
-                    <a href="./superleague.html" class="superleague-box link-superleague">
-                        <h5 class="league-heading">Superleague</h5>
-                        <img src="./assets/images/greek-flag.png" class="greek-flag" alt="">
-                    </a>
+    <div class="main-container">
+        <div class="container">
+            <img class="logo" src="./assets/images/image.png" alt="">
+            <div class="main-content">
+                <div class="left-content">
+                    <h2>BETTING MADE EASY</h2>
+                    <h1>ENJOY YOUR BET CALCULATOR</h1>
+                    <button class="cta" onclick="window.location.href='./home.html'">START NOW</button>
                 </div>
-
-                <div>
-                    <a href="./premierleague.html" class="superleague-box link-superleague">
-                        <h5 class="league-heading">Premier League</h5>
-                        <img src="./assets/images/british-flag.png" class="british-flag" alt="">
-                    </a>
+                <div class="right-content">
+                    <div class="quotes-container-left">
+                        <div class="quote"></div>
+                        <div class="quote"></div>
+                    </div>
+                    <div class="video-container">
+                        <video class="match-video" src="./assets/videos/match-video.mp4" autoplay loop muted
+                            playsinline></video>
+                    </div>
+                    <div class="quotes-container-right">
+                        <div class="quote"></div>
+                        <div class="quote"></div>
+                    </div>
                 </div>
-
-
-
-                <div class="laliga-box">
-                    <a href="./laliga.html" class="superleague-box link-superleague">
-                        <h5 class="league-heading">La Liga</h5>
-                        <img src="./assets/images/spanish-flag.png" class="spanish-flag" alt="">
-                    </a>
-                </div>
-
-                <div class="bundesliga-box">
-                    <a href="./bundesliga.html" class="superleague-box link-superleague">
-                        <h5 class="league-heading">Bundesliga</h5>
-                        <img src="./assets/images/german-flag.png" class="german-flag" alt="">
-                    </a>
-                </div>
-
             </div>
         </div>
-    </section>
-
-    <script src="./assets/components/navigation/navigation.js"></script>
+    </div>
 </body>
 
 </html>
