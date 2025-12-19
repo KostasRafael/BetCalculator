@@ -16,31 +16,29 @@
     <link rel="stylesheet" href="./assets/components/fixtures-row/fixtures-row.css">
     <link rel="stylesheet" href="./assets/components/close-button/close-button.css">
     <link rel="stylesheet" href="./assets/components/navigation/navigation.css">
-    <script src="./functions.js"></script>
-    <script src="./superleague-teams.js"></script>
-    <script src="./team-fixture-card.js"></script>
     <script src="https://kit.fontawesome.com/50ab0d686f.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
     <navigation-custom></navigation-custom>
+    <div class="main-container">
+        <section class="laptop-next-fixtures">
+            <div class="keyboard-screen">
+                <div class="screen">
+                    <div class="data-div data-div-one"> </div>
+                    <div class="data-div data-div-two"></div>
+                </div>
 
-    <section class="laptop-next-fixtures">
-        <div class="keyboard-screen">
-            <div class="screen">
-                <div class="data-div data-div-one"> </div>
-                <div class="data-div data-div-two"></div>
+                <div class="all-teams-container"></div>
             </div>
 
-            <div class="all-teams-container"></div>
-        </div>
 
+            <div class="next-fixtures-container">
 
-        <div class="next-fixtures-container">
-
-        </div>
-    </section>
+            </div>
+        </section>
+    </div>
 
 </body>
 <script src="./assets/components/single-team-container/single-team-container.js" type="module" defer></script>
@@ -61,17 +59,13 @@
 
     async function renderTeams(leagueId) {
         const allLeagueTeams = await readyAllTeams(leagueId);
-        console.log("allLeagueTeams", allLeagueTeams);
         const allTeamsContainer = document.querySelector(".all-teams-container");
         const allTeamsArray = Object.entries(allLeagueTeams);
-        console.log("allTeamsArray in qiestion", allTeamsArray);
         allTeamsArray.forEach((team) => {
             const teamId = team[1].id;
-            console.log("teamId in question", teamId);
             const teamName = team[1].name;
             const teamLogo = team[1].logo;
             const teamNameOneWord = teamName.split(" ")[0];
-            console.log("teamNameOneWord", teamNameOneWord);
             const teamContainer = document.createElement("single-team-container");
             teamContainer.classList.add("team-div");
             teamContainer.classList.add(teamNameOneWord);
@@ -84,13 +78,7 @@
 
     renderTeams(leagueId);
 
-
-
-
-
-
-
-
+    fetchNextFixtures(leagueId);
 
 
 

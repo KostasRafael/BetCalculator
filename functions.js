@@ -6,17 +6,13 @@ async function fetchTeams(leagueId) {
   };
 
   const response = await fetch(url, { headers });
-  console.log("response", response);
   const responseJson = await response.json();
-  console.log("responseJson", responseJson);
   const arrayOfTeams = responseJson.response;
-  console.log("arrayOfTeams", arrayOfTeams);
   return arrayOfTeams;
 }
 
 async function useAllTeams(leagueId) {
   const allTeamsArray = await fetchTeams(leagueId);
-  console.log("allTeamsArray", allTeamsArray);
   const allTeams = allTeamsArray.reduce((accumulator, teamItem) => {
     accumulator[teamItem.team.id] = {
       name: teamItem.team.name,
@@ -27,7 +23,6 @@ async function useAllTeams(leagueId) {
     return accumulator;
   }, {});
 
-  console.log("allTeams", allTeams);
   return allTeams;
 }
 
@@ -107,6 +102,5 @@ function fetchAllTeamsOfLeague(leagueId) {
     .then((response) => response.json())
     .then((data) => {
       const allteams = data.response;
-      console.log("allTeams", allteams);
     });
 }

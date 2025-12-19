@@ -26,10 +26,9 @@
 
 .next-fixtures-container {
   box-sizing: border-box;
-  border: 2px solid red;
   color: white;
   background-color: rgb(128, 128, 128, 0.4);
-  width: 600px;
+  width: 40%;
   padding: 5px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -38,7 +37,6 @@
 
 .next-fixture-row-h1 {
   margin: 0;
-  border: 2px solid blue;
 }
 
 .next-fixture-row-h4 {
@@ -54,8 +52,6 @@
 }
 
 .next-fixture-row-span {
-  font-size: 12px;
-  font-weight: 600;
 }
 
 .next-fixture-row {
@@ -64,6 +60,7 @@
   display: flex;
   justify-content: space-between;
   padding: 5px;
+  font-size: 18px;
 }
 
 .col-one {
@@ -71,7 +68,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
+  gap: 5px;
 }
 
 .col-two {
@@ -79,7 +76,7 @@
   border: 2px solid green;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
+  gap: 5px;
 }
 
 .col-three {
@@ -87,131 +84,43 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
+  gap: 5px;
 }
 
 .home-probability {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 5px;
   align-items: center;
 }
 
 .draw-probability {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 5px;
   align-items: center;
 }
 
 .away-probability {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 5px;
   align-items: center;
-}
-
-.home-given-odds {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  align-items: center;
-}
-
-.draw-given-odds {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  align-items: center;
-}
-
-.away-given-odds {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  align-items: center;
-}
-
-.home-required-odds {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  align-items: center;
-  width: min-content;
-}
-
-.home-required-odds h5 {
-  text-align: center;
-}
-
-.draw-required-odds {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  align-items: center;
-  width: min-content;
-}
-
-.draw-required-odds h5 {
-  text-align: center;
-}
-
-.away-required-odds {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  align-items: center;
-  width: min-content;
-}
-
-.away-required-odds h5 {
-  text-align: center;
-}
-
-.odss-given-home-number {
-  width: 40px;
-  text-align: center;
-  font-size: 12px;
-}
-
-.odss-given-draw-number {
-  width: 40px;
-  text-align: center;
-  font-size: 12px;
-}
-
-.odss-given-away-number {
-  width: 40px;
-  text-align: center;
-  font-size: 12px;
-}
-
-.odss-required-home-number,
-.odss-required-draw-number,
-.odss-required-away-number {
-  width: 40px;
-  padding: 1px 2px;
-  border: 1.6px solid #767676;
-  text-align: center;
-  background-color: white;
-  height: 13.6px;
-  box-sizing: content-box;
-  color: black;
-  font-size: 12px;
 }
 
 .home-name,
 .home-probability-label,
-.odds-given,
 .draw-name,
 .draw-probability-label,
 .draw-text,
 .away-name,
-.away-probability-label,
-.odss-required {
-  color: var(--font-color-secondary);
+.away-probability-label {
+  color: white;
+  letter-spacing: 0.06em;
+  font-size: 18px;
   background: rgb(95, 95, 95);
   padding: 2px;
+  border-radius: 5px;
 }
 
 .home-name,
@@ -219,5 +128,4 @@
 .away-name {
   background: var(--custom-background-color);
   padding: 5px;
-  border-radius: 5px;
 }

@@ -15,19 +15,20 @@
 
 <body>
     <navigation-custom></navigation-custom>
+    <div class="main-container">
+        <section class="laptop-next-fixtures">
+            <div class="keyboard-screen">
+                <div class="screen">
+                    <div class="data-div data-div-one"> </div>
+                    <div class="data-div data-div-two"></div>
+                </div>
 
-    <section class="laptop-next-fixtures">
-        <div class="keyboard-screen">
-            <div class="screen">
-                <div class="data-div data-div-one"> </div>
-                <div class="data-div data-div-two"></div>
+                <div class="all-teams-container"> </div>
             </div>
 
-            <div class="all-teams-container"> </div>
-        </div>
-
-        <div class="next-fixtures-container"> </div>
-    </section>
+            <div class="next-fixtures-container"> </div>
+        </section>
+    </div>
 
 
 
@@ -45,19 +46,20 @@
 
     const leagueId = 140;
 
+    const nextFixturesContainer = document.querySelector(".next-fixtures-container");
+    fetchNextFixtures(leagueId);
+
+
+
     async function renderTeams(leagueId) {
         const allLeagueTeams = await readyAllTeams(leagueId);
-        console.log("allLeagueTeams", allLeagueTeams);
         const allTeamsContainer = document.querySelector(".all-teams-container");
         const allTeamsArray = Object.entries(allLeagueTeams);
-        console.log("allTeamsArray in qiestion", allTeamsArray);
         allTeamsArray.forEach((team) => {
             const teamId = team[1].id;
-            console.log("teamId in question", teamId);
             const teamName = team[1].name;
             const teamLogo = team[1].logo;
             const teamNameOneWord = teamName.split(" ")[0];
-            console.log("teamNameOneWord", teamNameOneWord);
             const teamContainer = document.createElement("single-team-container");
             teamContainer.classList.add("team-div");
             teamContainer.classList.add(teamNameOneWord);

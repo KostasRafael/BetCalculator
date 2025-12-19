@@ -1,6 +1,5 @@
 /* fixtures-roe*/
 .data-div {
-  border: 2px solid yellow;
   border-radius: 6px;
   height: max-content;
   width: 100%;
@@ -12,6 +11,7 @@
   transform: translateY(100%);
   opacity: 0;
   transition: opacity, transform, ease-in-out, 2s;
+  padding: 10px 20px;
 }
 
 .show {
@@ -20,7 +20,6 @@
 }
 /* fixtures-roe*/
 .fixtures-row {
-  border: 2px solid purple;
   box-sizing: border-box;
   display: grid;
   gap: 50px;
@@ -29,14 +28,12 @@
 }
 /* fixtures-roe*/
 .home-name-goals-col {
-  border: 2px solid yellow;
   display: flex;
   justify-content: space-between;
   background-color: rgba(10, 19, 36, 0.6);
 }
 
 .away-name-goals-col {
-  border: 2px solid red;
   display: flex;
   justify-content: space-between;
   background-color: rgba(10, 19, 36, 0.6);
@@ -44,7 +41,7 @@
 
 /* fixtures-row*/
 .data-div span {
-  font-size: 12px;
+  font-size: 18px;
 
   /*
   background: linear-gradient(to right, rgb(255, 255, 255), rgb(41, 168, 172));
@@ -56,21 +53,18 @@
 
 .fixtures-row-home-name {
   color: rgb(109, 246, 255);
-  border: 1px solid green;
   margin: 0;
   padding: 0;
 }
 
 .fixtures-row-away-name {
   color: rgb(109, 246, 255);
-  border: 1px solid green;
   margin: 0;
   padding: 0;
 }
 
 .fixtures-row-home-goals {
   color: white;
-  border: 1px solid green;
   margin: 0;
   padding: 0;
   font-weight: 700;
@@ -78,7 +72,6 @@
 
 .fixtures-row-away-goals {
   color: white;
-  border: 1px solid green;
   font-weight: 700;
   margin: 0;
   padding: 0;

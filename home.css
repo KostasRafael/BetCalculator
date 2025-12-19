@@ -125,8 +125,7 @@ body {
 /* League Pages */
 
 .keyboard-screen {
-  width: 100%;
-  max-width: 750px;
+  width: 60%;
   display: flex;
   flex-direction: column;
   align-content: space-between;
@@ -144,10 +143,10 @@ body {
   padding: 0 20px;
   border-radius: 15px;
   gap: 10px;
+  min-height: 340px;
 }
 
 .all-fixtures-div {
-  border: 2px solid black;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -155,7 +154,6 @@ body {
 }
 
 .results-heading {
-  border: 2px solid green;
   color: white;
   text-align: center;
   margin: 0;
@@ -168,79 +166,19 @@ body {
   display: none;
 }
 
+.main-container {
+  border: 5px solid blue;
+  padding: 20px 60px;
+  min-height: 100vh;
+}
+
 .laptop-next-fixtures {
   display: flex;
   justify-content: space-between;
   gap: 10px;
+  border: 5px solid red;
 }
 
-@media (max-width: 890px) {
-  .screen {
-    aspect-ratio: 2/1;
-  }
-
-  .fixtures-row {
-    gap: 20px;
-  }
-}
-
-@media (max-width: 500px) {
-  .laptop-next-fixtures {
-    flex-direction: column;
-  }
-
-  .all-teams-container {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .team-div {
-    background-color: white;
-  }
-
-  .team-div span {
-    color: black;
-  }
-
-  .screen {
-    height: 250px;
-  }
-
-  .fixtures-row {
-    border: 4px solid brown;
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-  }
-
-  .fixtures-row-away-name {
-    order: 0;
-  }
-
-  .fixtures-row-away-goals {
-    order: 1;
-  }
-
-  .team-name {
-    font-size: 12px;
-  }
-
-  .navigation-bar-container {
-    padding: 0 20px;
-  }
-
-  .nav-menu {
-    gap: 20px;
-  }
-
-  .nav-menu a {
-    font-size: 16px;
-  }
-
-  .logo-image {
-    width: 60px;
-  }
-
-  .next-fixtures-container {
-    max-width: 100%;
-  }
+.laptop-next-fixtures > * {
+  border: 5px solid green;
 }

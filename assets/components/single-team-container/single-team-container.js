@@ -8,8 +8,6 @@ class singleTeamContainer extends HTMLElement {
     const teamName = this.getAttribute("team-name");
     const teamLogo = this.getAttribute("team-logo");
 
-    console.log("lo", teamLogo);
-
     this.innerHTML = `
           <button class="team-logo-name-div" onclick="displayTeamFixtures(${teamId})">
             <div class="logo-name">  
