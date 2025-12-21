@@ -22,7 +22,18 @@
   --font-size-large: 18px;
 }
 
-/*next-fixture-container*/
+/*----------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------*/
+/*next-fixtures-container*/
+/*next-fixtures-container*/
+/*----------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------*/
+
+.next-fixture-row-h1,
+.next-fixture-row-h4,
+.next-fixture-row-h6 {
+  margin: 0;
+}
 
 .next-fixtures-container {
   box-sizing: border-box;
@@ -33,27 +44,60 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
+  font-size: 18px;
 }
 
-.next-fixture-row-h1 {
-  margin: 0;
+.next-fixture-row {
+  background-color: rgb(128, 128, 128, 0.8);
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  font-size: 18px;
+  gap: 5px;
 }
 
-.next-fixture-row-h4 {
-  margin: 0;
+.col-one,
+.col-two,
+.col-three {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
 }
 
-.next-fixture-row-h5 {
-  margin: 0;
+.home-probability-container,
+.draw-probability-container,
+.away-probability-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
 }
 
-.next-fixture-row-h6 {
-  margin: 0;
+.home-name,
+.draw-name,
+.away-name {
+  font-size: 18px;
+  background: var(--custom-background-color);
 }
 
-.next-fixture-row-span {
-}
+/* Responsive Design */
 
+/*Base Designs */
+/*
+.next-fixtures-container {
+  box-sizing: border-box;
+  color: white;
+  background-color: rgb(128, 128, 128, 0.4);
+  width: 40%;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+*/
+
+/*
 .next-fixture-row {
   border: 2px solid blue;
   background-color: rgb(128, 128, 128, 0.8);
@@ -61,71 +105,40 @@
   justify-content: space-between;
   padding: 5px;
   font-size: 18px;
-}
-
-.col-one {
-  border: 2px solid green;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 5px;
 }
+*/
 
-.col-two {
-  display: flex;
-  border: 2px solid green;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-}
-
-.col-three {
-  border: 2px solid green;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-}
-
-.home-probability {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  align-items: center;
-}
-
-.draw-probability {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  align-items: center;
-}
-
-.away-probability {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  align-items: center;
-}
-
-.home-name,
-.home-probability-label,
-.draw-name,
-.draw-probability-label,
-.draw-text,
-.away-name,
-.away-probability-label {
-  color: white;
-  letter-spacing: 0.06em;
-  font-size: 18px;
-  background: rgb(95, 95, 95);
-  padding: 2px;
-  border-radius: 5px;
-}
-
+/*
 .home-name,
 .draw-name,
 .away-name {
+  font-size: 18px;
   background: var(--custom-background-color);
-  padding: 5px;
+}
+*/
+@media (max-width: 500px) {
+  .next-fixtures-container {
+  }
+
+  .next-fixture-row {
+  }
+
+  .home-name,
+  .draw-name,
+  .away-name {
+  }
+}
+
+@media (max-width: 1000px) {
+  .next-fixtures-container {
+  }
+
+  .next-fixture-row {
+  }
+
+  .home-name,
+  .draw-name,
+  .away-name {
+  }
 }

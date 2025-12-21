@@ -1,10 +1,8 @@
-h4 {
-  margin: 0;
-}
-
+h4,
 h5 {
   margin: 0;
 }
+
 /* single */
 
 .all-teams-container {
@@ -47,8 +45,6 @@ h5 {
 }
 
 /* single */
-.team-div span:hover {
-}
 
 /* single */
 .team-logo-name-div {
