@@ -1,0 +1,9 @@
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 64px;
+  background: #0b0c10;
+}

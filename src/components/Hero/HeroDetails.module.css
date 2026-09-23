@@ -1,0 +1,41 @@
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.heading {
+  margin: 0;
+  width: 100%;
+  font-family: 'Geist', sans-serif;
+  font-weight: 800;
+  font-size: 56px;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+.highlight {
+  color: #10b981;
+}
+
+.description {
+  margin: 0;
+  width: 100%;
+  font-family: 'Geist', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #94a3b8;
+}

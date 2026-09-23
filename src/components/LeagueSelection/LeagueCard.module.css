@@ -1,0 +1,113 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  height: 280px;
+  border-radius: 20px;
+  border: 1px solid #2e3a46;
+  background: #151a22;
+  overflow: hidden;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+}
+
+.card.active {
+  border: 2px solid #10b981;
+}
+
+.image {
+  display: block;
+  flex-shrink: 0;
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.body {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 0;
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.flag {
+  margin: 0;
+  font-size: 32px;
+  line-height: normal;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.country {
+  margin: 0;
+  font-family: 'Geist', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.name {
+  margin: 0;
+  font-family: 'Geist', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.chevron {
+  display: block;
+  flex-shrink: 0;
+}
+
+.badge {
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: rgba(16, 185, 129, 0.13);
+}
+
+.badgeLabel {
+  margin: 0;
+  font-family: 'Geist', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: #10b981;
+  white-space: nowrap;
+}

@@ -1,0 +1,18 @@
+.badge {
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  padding: 6px 12px;
+  border-radius: 100px;
+  background: rgba(16, 185, 129, 0.13);
+}
+
+.label {
+  margin: 0;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: normal;
+  color: #34d399;
+  white-space: nowrap;
+}
