@@ -8,9 +8,6 @@ function HeroActions() {
         <span>Get Started Now</span>
         <img className={styles.icon} src={arrowRight} alt="" width="16" height="16" />
       </a>
-      <a href="#" className={styles.secondary}>
-        <span>View Pricing</span>
-      </a>
     </div>
   )
 }
